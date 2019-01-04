@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "Expo Playground",
+    "description": "an expo playground... examples of what apis are available",
+    "slug": "expo-playground",
+    "privacy": "public",
+    "sdkVersion": "31.0.0",
+    "platforms": ["ios", "android"],
+    "version": "0.0.1",
+    "orientation": "portrait",
+    "primaryColor": "#ffffff",
+    "icon": "src/assets/icon.png",
+    "splash": {
+      "image": "src/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}
