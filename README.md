@@ -41,3 +41,4 @@ Run Project Locally: `expo start`
   - Keyboard
 - More Stack
   - Device information
+- Updated to latest Expo SDK 32
