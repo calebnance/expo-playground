@@ -5,33 +5,32 @@ import { gStyle } from '../api/constants';
 
 import TouchTextIcon from '../components/TouchTextIcon';
 
-class More extends React.Component {
-  constructor(props) {
-    super(props);
+const More = props => {
+  const { navigation } = props;
 
-    this.state = {
-      text: 'More'
-    };
-  }
-
-  render() {
-    const { navigation } = this.props;
-
-    return (
-      <View style={gStyle.container}>
-        <TouchTextIcon
-          onPress={() =>
-            navigation.navigate('MoreDevice', {
-              title: 'Device',
-              url: 'https://docs.expo.io/versions/latest/sdk/constants'
-            })
-          }
-          text="Device information"
-        />
-      </View>
-    );
-  }
-}
+  return (
+    <View style={gStyle.container}>
+      <TouchTextIcon
+        onPress={() =>
+          navigation.navigate('MoreBuild', {
+            title: 'Build',
+            url: 'https://docs.expo.io/versions/latest/sdk/constants'
+          })
+        }
+        text="Build Information"
+      />
+      <TouchTextIcon
+        onPress={() =>
+          navigation.navigate('MoreDevice', {
+            title: 'Device',
+            url: 'https://docs.expo.io/versions/latest/sdk/constants'
+          })
+        }
+        text="Device Information"
+      />
+    </View>
+  );
+};
 
 More.propTypes = {
   // required

@@ -7,6 +7,7 @@ import navigationOptions from './defaultOptions';
 import MoreScreen from '../screens/More';
 import SvgMenu from '../components/icons/Svg.Menu';
 
+import BuildScreen from '../screens/More/Build';
 import DeviceScreen from '../screens/More/Device';
 
 const Icon = ({ focused }) => <SvgMenu active={focused} />;
@@ -24,6 +25,10 @@ export default createStackNavigator(
         title: 'More',
         ...navigationOptions
       }
+    },
+    MoreBuild: {
+      screen: BuildScreen,
+      navigationOptions
     },
     MoreDevice: {
       screen: DeviceScreen,
