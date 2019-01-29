@@ -22,7 +22,7 @@ const LinkingComponent = () => (
         <TouchButton
           btnStyle={gStyle.btnPrimary}
           btnTextStyle={gStyle.btnPrimaryText}
-          onPress={() => Linking.openURL(' mailto:support@expo.io')}
+          onPress={() => Linking.openURL('mailto:support@expo.io')}
           text="E-mail Expo Support"
         />
 
