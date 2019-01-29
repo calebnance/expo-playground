@@ -40,6 +40,7 @@ Run Project Locally: `expo start`
   - [Alert](https://facebook.github.io/react-native/docs/alert)
   - [Keyboard](https://facebook.github.io/react-native/docs/keyboard)
   - [Linking](https://docs.expo.io/versions/latest/workflow/linking)
+  - [Vibration](https://facebook.github.io/react-native/docs/vibration)
 - More Stack
   - Device information
 - Updated to latest [Expo SDK 32](https://blog.expo.io/expo-sdk-v32-0-0-is-now-available-6b78f92a6c52)
