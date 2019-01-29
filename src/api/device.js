@@ -4,9 +4,10 @@ import { Dimensions, Platform } from 'react-native';
 const windowInfo = Dimensions.get('window');
 const { height, width } = windowInfo;
 
+const iOS = Platform.OS === 'ios';
 let iPhoneX = false;
 if (
-  Platform.OS === 'ios' &&
+  iOS &&
   (height === 812 || width === 812 || (height === 896 || width === 896))
 ) {
   // iphone screen breakdown
@@ -16,6 +17,7 @@ if (
 
 export default {
   height,
+  iOS,
   iPhoneX,
   width
 };
