@@ -40,6 +40,9 @@ Run Project Locally: `expo start`
   - [Alert](https://facebook.github.io/react-native/docs/alert)
   - [Keyboard](https://facebook.github.io/react-native/docs/keyboard)
   - [Linking](https://docs.expo.io/versions/latest/workflow/linking)
+  - [MapView](https://docs.expo.io/versions/latest/sdk/map-view/)
+    - if on iOS device, option to toggle between Google Maps and Apple Maps
+    - example of how to change location dynamically
   - [Vibration](https://facebook.github.io/react-native/docs/vibration)
 - More Stack
   - Device information

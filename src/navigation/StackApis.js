@@ -10,6 +10,7 @@ import SvgApis from '../components/icons/Svg.Apis';
 import AlertScreen from '../screens/Apis/Alert';
 import KeyboardScreen from '../screens/Apis/Keyboard';
 import LinkingScreen from '../screens/Apis/Linking';
+import MapViewScreen from '../screens/Apis/MapView';
 import VibrationScreen from '../screens/Apis/Vibration';
 
 const Icon = ({ focused }) => <SvgApis active={focused} />;
@@ -38,6 +39,10 @@ export default createStackNavigator(
     },
     ApisLinking: {
       screen: LinkingScreen,
+      navigationOptions
+    },
+    ApisMapView: {
+      screen: MapViewScreen,
       navigationOptions
     },
     ApisVibration: {

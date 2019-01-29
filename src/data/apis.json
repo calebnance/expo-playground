@@ -18,8 +18,14 @@
       "title": "Linking",
       "url": "https://docs.expo.io/versions/latest/workflow/linking"
     },
-    "vibration": {
+    "mapview": {
       "id": 4,
+      "route": "ApisMapView",
+      "title": "Map View",
+      "url": "https://docs.expo.io/versions/latest/sdk/map-view/"
+    },
+    "vibration": {
+      "id": 5,
       "route": "ApisVibration",
       "title": "Vibration",
       "url": "https://facebook.github.io/react-native/docs/vibration"

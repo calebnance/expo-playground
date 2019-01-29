@@ -8,7 +8,7 @@ import {
   TouchableWithoutFeedback,
   View
 } from 'react-native';
-import { colors, gStyle } from '../../api/constants';
+import { colors, fonts, gStyle } from '../../api/constants';
 
 class KeyboardComponent extends React.Component {
   constructor(props) {
@@ -112,7 +112,7 @@ class KeyboardComponent extends React.Component {
 
 const styles = StyleSheet.create({
   label: {
-    fontFamily: 'HelveticaNeue-Bold',
+    fontFamily: fonts.bold,
     fontSize: 16,
     marginBottom: 4
   },
