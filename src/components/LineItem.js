@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
-import { colors } from '../api/constants';
+import { colors, fonts } from '../api/constants';
 
 const LineItem = props => {
   const { label, text } = props;
@@ -29,10 +29,10 @@ const styles = StyleSheet.create({
     padding: 16
   },
   label: {
-    fontFamily: 'HelveticaNeue-Bold'
+    fontFamily: fonts.bold
   },
   text: {
-    fontFamily: 'HelveticaNeue-Medium'
+    fontFamily: fonts.medium
   }
 });
 

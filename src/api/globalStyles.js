@@ -1,4 +1,5 @@
 import colors from './colors';
+import fonts from './fonts';
 
 export default {
   container: {
@@ -39,7 +40,7 @@ export default {
     color: colors.white
   },
   heading: {
-    fontFamily: 'HelveticaNeue-Medium',
+    fontFamily: fonts.medium,
     fontSize: 20,
     marginBottom: 8,
     marginTop: 16,
@@ -52,7 +53,7 @@ export default {
     paddingVertical: 4
   },
   sectionHeadingText: {
-    fontFamily: 'HelveticaNeue-Medium',
+    fontFamily: fonts.medium,
     fontSize: 20
   },
   paragraph: {

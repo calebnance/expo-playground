@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import PropTypes from 'prop-types';
-import { colors } from '../api/constants';
+import { colors, fonts } from '../api/constants';
 
 import ArrowRight from './icons/Svg.ArrowRight';
 
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   },
   text: {
     alignSelf: 'center',
-    fontFamily: 'HelveticaNeue-Medium',
+    fontFamily: fonts.medium,
     fontSize: 18
   },
   icon: {

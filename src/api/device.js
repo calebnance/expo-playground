@@ -6,6 +6,7 @@ const { height, width } = windowInfo;
 
 const iOS = Platform.OS === 'ios';
 let iPhoneX = false;
+
 if (
   iOS &&
   (height === 812 || width === 812 || (height === 896 || width === 896))
