@@ -8,6 +8,7 @@ import ApisScreen from '../screens/Apis';
 import SvgApis from '../components/icons/Svg.Apis';
 
 import AlertScreen from '../screens/Apis/Alert';
+import HapticScreen from '../screens/Apis/Haptic';
 import KeyboardScreen from '../screens/Apis/Keyboard';
 import LinkingScreen from '../screens/Apis/Linking';
 import MapViewScreen from '../screens/Apis/MapView';
@@ -31,6 +32,10 @@ export default createStackNavigator(
     },
     ApisAlert: {
       screen: AlertScreen,
+      navigationOptions
+    },
+    ApisHaptic: {
+      screen: HapticScreen,
       navigationOptions
     },
     ApisKeyboard: {
