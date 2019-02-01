@@ -38,6 +38,8 @@ Run Project Locally: `expo start`
 
 - Examples of:
   - [Alert](https://facebook.github.io/react-native/docs/alert)
+  - [Brightness](https://docs.expo.io/versions/latest/sdk/brightness/)
+  - [Haptic](https://docs.expo.io/versions/latest/sdk/haptic/)
   - [Keyboard](https://facebook.github.io/react-native/docs/keyboard)
   - [Linking](https://docs.expo.io/versions/latest/workflow/linking)
   - [MapView](https://docs.expo.io/versions/latest/sdk/map-view/)
@@ -45,5 +47,15 @@ Run Project Locally: `expo start`
     - example of how to change location dynamically
   - [Vibration](https://facebook.github.io/react-native/docs/vibration)
 - More Stack
+  - Build information
+    - Expo version
+    - Expo SDK
+    - Orientation
+    - Current App Version
   - Device information
+    - Device Type
+    - Running On (Physical or Emulator/Simulator)
+    - Device Name
+    - Device Year
+    - Device Dimensions
 - Updated to latest [Expo SDK 32](https://blog.expo.io/expo-sdk-v32-0-0-is-now-available-6b78f92a6c52)
