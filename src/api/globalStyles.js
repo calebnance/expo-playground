@@ -23,10 +23,11 @@ export default {
     backgroundColor: colors.white,
     borderColor: colors.black,
     borderWidth: 1,
-    borderRadius: 24,
+    borderRadius: 4,
     height: 46,
     justifyContent: 'center',
-    marginBottom: 8
+    marginBottom: 16,
+    paddingHorizontal: 16
   },
   btnText: {
     color: colors.black,
@@ -42,7 +43,7 @@ export default {
   heading: {
     fontFamily: fonts.medium,
     fontSize: 20,
-    marginBottom: 8,
+    marginBottom: 16,
     marginTop: 16,
     textAlign: 'center'
   },
@@ -50,7 +51,7 @@ export default {
     borderBottomColor: colors.lightGrey,
     borderBottomWidth: 1,
     marginVertical: 16,
-    paddingVertical: 4
+    paddingVertical: 8
   },
   sectionHeadingText: {
     fontFamily: fonts.medium,
@@ -59,6 +60,17 @@ export default {
   paragraph: {
     fontSize: 14,
     marginBottom: 16
+  },
+  paragraphBold: {
+    fontFamily: fonts.bold,
+    fontSize: 14,
+    marginBottom: 16
+  },
+  separator: {
+    backgroundColor: colors.lightGrey,
+    height: 1,
+    marginVertical: 16,
+    width: '100%'
   },
   spacer24: {
     height: 24,
@@ -76,6 +88,9 @@ export default {
   },
   mR16: {
     marginRight: 16
+  },
+  mH16: {
+    marginHorizontal: 16
   },
   mV16: {
     marginVertical: 16

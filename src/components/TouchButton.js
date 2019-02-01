@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import { gStyle } from '../api/constants';
 
 const TouchButton = props => {
-  const { btnStyle, btnTextStyle, onPress, text, width } = props;
+  const { btnStyle, btnTextStyle, onPress, text, minWidth } = props;
 
-  const container = StyleSheet.flatten([gStyle.btn, btnStyle, { width }]);
+  const container = StyleSheet.flatten([gStyle.btn, btnStyle, { minWidth }]);
   const textStyle = StyleSheet.flatten([gStyle.btnText, btnTextStyle]);
 
   return (
@@ -19,7 +19,7 @@ const TouchButton = props => {
 TouchButton.defaultProps = {
   btnStyle: {},
   btnTextStyle: {},
-  width: 260
+  minWidth: 220
 };
 
 TouchButton.propTypes = {
@@ -38,7 +38,7 @@ TouchButton.propTypes = {
     PropTypes.number,
     PropTypes.object
   ]),
-  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+  minWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 };
 
 export default TouchButton;
