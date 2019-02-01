@@ -29,7 +29,7 @@ const androidNotes = (
   </React.Fragment>
 );
 
-class VibrationComponent extends React.Component {
+class VibrationScreen extends React.Component {
   constructor(props) {
     super(props);
 
@@ -89,4 +89,4 @@ class VibrationComponent extends React.Component {
   }
 }
 
-export default VibrationComponent;
+export default VibrationScreen;

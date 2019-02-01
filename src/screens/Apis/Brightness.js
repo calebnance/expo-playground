@@ -5,7 +5,7 @@ import { colors, device, gStyle } from '../../api/constants';
 
 import TouchButton from '../../components/TouchButton';
 
-class BrightnessComponent extends React.Component {
+class BrightnessScreen extends React.Component {
   constructor(props) {
     super(props);
 
@@ -130,4 +130,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default BrightnessComponent;
+export default BrightnessScreen;

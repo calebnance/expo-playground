@@ -10,7 +10,7 @@ const TouchTextIcon = props => {
 
   return (
     <TouchableOpacity
-      activeOpacity={0.4}
+      activeOpacity={0.7}
       onPress={onPress}
       style={[styles.container, { width }]}
     >

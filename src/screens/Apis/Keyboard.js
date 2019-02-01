@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { colors, fonts, gStyle } from '../../api/constants';
 
-class KeyboardComponent extends React.Component {
+class KeyboardScreen extends React.Component {
   constructor(props) {
     super(props);
 
@@ -126,4 +126,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default KeyboardComponent;
+export default KeyboardScreen;

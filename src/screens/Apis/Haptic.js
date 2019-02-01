@@ -11,7 +11,7 @@ import TouchButton from '../../components/TouchButton';
 
 const { Light, Medium, Heavy } = Haptic.ImpactFeedbackStyle;
 
-const HapticComponent = () => (
+const HapticScreen = () => (
   <ScrollView style={gStyle.container}>
     <View style={gStyle.spacer24} />
 
@@ -82,4 +82,4 @@ const HapticComponent = () => (
   </ScrollView>
 );
 
-export default HapticComponent;
+export default HapticScreen;

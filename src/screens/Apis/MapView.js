@@ -16,7 +16,7 @@ import SvgMapPin from '../../components/icons/Svg.MapPin';
 const { PROVIDER_GOOGLE } = MapView;
 const locationsArray = Object.values(locations);
 
-class MapViewComponent extends React.Component {
+class MapViewScreen extends React.Component {
   constructor(props) {
     super(props);
 
@@ -134,4 +134,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default MapViewComponent;
+export default MapViewScreen;

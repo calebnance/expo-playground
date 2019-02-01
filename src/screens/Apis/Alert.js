@@ -4,7 +4,7 @@ import { gStyle } from '../../api/constants';
 
 import TouchButton from '../../components/TouchButton';
 
-class AlertComponent extends React.Component {
+class AlertScreen extends React.Component {
   constructor(props) {
     super(props);
 
@@ -111,4 +111,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default AlertComponent;
+export default AlertScreen;

@@ -4,7 +4,7 @@ import { gStyle } from '../../api/constants';
 
 import TouchButton from '../../components/TouchButton';
 
-const LinkingComponent = () => (
+const LinkingScreen = () => (
   <ScrollView style={gStyle.container}>
     <View style={gStyle.spacer24} />
 
@@ -104,8 +104,4 @@ const LinkingComponent = () => (
   </ScrollView>
 );
 
-export default LinkingComponent;
-
-// mailto: support@expo.io
-// Linking.openURL('https://expo.io');
-// 1-800-444-4444
+export default LinkingScreen;
