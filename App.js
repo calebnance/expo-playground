@@ -1,6 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { AppLoading } from 'expo';
+import { device } from './src/api/constants';
 
 import Stack from './src/navigation/Stack';
 
@@ -27,6 +28,8 @@ export default class App extends React.Component {
   render() {
     const { isLoading } = this.state;
 
+    const barStyle = device.iOS ? 'dark-content' : 'light-content';
+
     if (isLoading) {
       return (
         <AppLoading
@@ -38,7 +41,7 @@ export default class App extends React.Component {
 
     return (
       <React.Fragment>
-        <StatusBar barStyle="dark-content" />
+        <StatusBar barStyle={barStyle} />
         <Stack />
       </React.Fragment>
     );
