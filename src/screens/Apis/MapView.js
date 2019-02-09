@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { MapView } from 'expo';
 import { colors, device, fonts, gStyle } from '../../api/constants';
-import locations from '../../data/locations';
+import locations from '../../data/locations.json';
 
 import SvgMapPin from '../../components/icons/Svg.MapPin';
 

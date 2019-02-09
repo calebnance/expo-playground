@@ -6,7 +6,7 @@ import { device, gStyle } from '../api/constants';
 
 import TouchTextIcon from '../components/TouchTextIcon';
 
-import apis from '../data/apis';
+import apis from '../data/apis.json';
 
 const Apis = props => {
   const { navigation } = props;
