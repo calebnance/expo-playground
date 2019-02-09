@@ -20,6 +20,8 @@ const Apis = props => {
         data={dataArray}
         keyExtractor={item => item.id.toString()}
         renderItem={({ item }) => {
+          let textMuted = null;
+
           // iOS system check only?
           if (item.iosVerMin) {
             // if not ios, return
@@ -32,6 +34,8 @@ const Apis = props => {
             if (sysVersion < item.iosVerMin) {
               return null;
             }
+
+            textMuted = ' - iOS';
           }
 
           return (
@@ -43,6 +47,7 @@ const Apis = props => {
                 })
               }
               text={item.title}
+              textMuted={textMuted}
             />
           );
         }}

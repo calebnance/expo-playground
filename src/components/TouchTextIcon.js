@@ -6,7 +6,7 @@ import { colors, fonts } from '../api/constants';
 import ArrowRight from './icons/Svg.ArrowRight';
 
 const TouchTextIcon = props => {
-  const { icon, iconSize, onPress, text, width } = props;
+  const { icon, iconSize, onPress, text, textMuted, width } = props;
 
   return (
     <TouchableOpacity
@@ -14,7 +14,10 @@ const TouchTextIcon = props => {
       onPress={onPress}
       style={[styles.container, { width }]}
     >
-      <Text style={styles.text}>{text}</Text>
+      <View style={styles.containerText}>
+        <Text style={styles.text}>{text}</Text>
+        {textMuted && <Text style={styles.textMuted}>{textMuted}</Text>}
+      </View>
       <View style={styles.icon}>
         {React.cloneElement(icon, {
           fill: colors.blue,
@@ -28,6 +31,7 @@ const TouchTextIcon = props => {
 TouchTextIcon.defaultProps = {
   icon: <ArrowRight />,
   iconSize: 24,
+  textMuted: null,
   width: '100%'
 };
 
@@ -39,6 +43,7 @@ TouchTextIcon.propTypes = {
   // optional
   icon: PropTypes.element,
   iconSize: PropTypes.number,
+  textMuted: PropTypes.string,
   width: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 };
 
@@ -53,8 +58,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     width: '100%'
   },
+  containerText: {
+    flexDirection: 'row'
+  },
   text: {
     alignSelf: 'center',
+    fontFamily: fonts.medium,
+    fontSize: 18
+  },
+  textMuted: {
+    alignSelf: 'center',
+    color: colors.midGrey,
     fontFamily: fonts.medium,
     fontSize: 18
   },
