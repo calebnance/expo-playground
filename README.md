@@ -46,6 +46,7 @@ Run Project Locally: `expo start`
     - if on iOS device, option to toggle between Google Maps and Apple Maps
     - example of how to change location dynamically
   - [Vibration](https://facebook.github.io/react-native/docs/vibration)
+  - [Video](https://docs.expo.io/versions/latest/sdk/video/)
 - More Stack
   - Build information
     - Expo version

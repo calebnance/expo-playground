@@ -42,6 +42,12 @@
       "route": "ApisVibration",
       "title": "Vibration",
       "url": "https://facebook.github.io/react-native/docs/vibration"
+    },
+    "Video": {
+      "id": 8,
+      "route": "ApisVideo",
+      "title": "Video",
+      "url": "https://docs.expo.io/versions/latest/sdk/video/"
     }
   }
 }
