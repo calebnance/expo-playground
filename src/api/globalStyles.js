@@ -1,4 +1,5 @@
 import colors from './colors';
+import device from './device';
 import fonts from './fonts';
 
 export default {
@@ -39,6 +40,15 @@ export default {
   },
   btnPrimaryText: {
     color: colors.white
+  },
+  navHeaderStyle: {
+    marginTop: device.iOS ? 0 : -device.statusBarHeight
+  },
+  navHeaderRightIconStyle: {
+    borderWidth: 0,
+    paddingLeft: 0,
+    paddingRight: 16,
+    paddingVertical: 8
   },
   heading: {
     fontFamily: fonts.medium,

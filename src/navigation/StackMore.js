@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { createStackNavigator } from 'react-navigation';
+import { gStyle } from '../api/constants';
 
-import navigationOptions from './defaultOptions';
+import navigationOptions from './defaultNavOptions';
 
 import MoreScreen from '../screens/More';
 import SvgMenu from '../components/icons/Svg.Menu';
@@ -23,7 +24,7 @@ export default createStackNavigator(
       screen: MoreScreen,
       navigationOptions: {
         title: 'More',
-        ...navigationOptions
+        headerStyle: gStyle.navHeaderStyle
       }
     },
     MoreBuild: {

@@ -1,26 +1,23 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
 import { WebBrowser } from 'expo';
-import { colors } from '../api/constants';
+import { gStyle } from '../api/constants';
+
+import TouchIcon from '../components/TouchIcon';
 
 import SvgOpenBook from '../components/icons/Svg.OpenBook';
 
 export default ({ navigation }) => ({
-  headerStyle: {
-    backgroundColor: colors.white
-  },
+  headerStyle: gStyle.navHeaderStyle,
   headerRight: (
-    <TouchableOpacity
-      activeOpacity={0.7}
+    <TouchIcon
+      icon={<SvgOpenBook />}
       onPress={() =>
         WebBrowser.openBrowserAsync(
           navigation.getParam('url', 'https://expo.io')
         )
       }
-      style={{ paddingRight: 16 }}
-    >
-      <SvgOpenBook />
-    </TouchableOpacity>
+      style={gStyle.navHeaderRightIconStyle}
+    />
   ),
   title: navigation.getParam('title', null)
 });
