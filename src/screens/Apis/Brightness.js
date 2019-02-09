@@ -25,7 +25,13 @@ class BrightnessScreen extends React.Component {
 
   async getBrightness() {
     const { original } = this.state;
-    const curBrightness = await Brightness.getBrightnessAsync();
+    let curBrightness = await Brightness.getBrightnessAsync();
+
+    // i've only seen android returning -1
+    if (curBrightness === -1) {
+      // so we need to grab system brightness
+      curBrightness = await Brightness.getSystemBrightnessAsync();
+    }
 
     this.setState({
       current: curBrightness.toFixed(2),
