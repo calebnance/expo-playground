@@ -93,6 +93,12 @@ export default {
   mB8: {
     marginBottom: 8
   },
+  mT8: {
+    marginTop: 8
+  },
+  mT16: {
+    marginTop: 16
+  },
   mR8: {
     marginRight: 8
   },
