@@ -1,5 +1,5 @@
-// const test = require("../assets/images/test.jpg");
+const records = require('../assets/images/records-100.jpg');
 
-// export default {
-//   test
-// };
+export default {
+  records
+};

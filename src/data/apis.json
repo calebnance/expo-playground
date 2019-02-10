@@ -20,31 +20,31 @@
       "url": "https://docs.expo.io/versions/latest/sdk/haptic/"
     },
     "keyboard": {
-      "id": 4,
+      "id": 5,
       "route": "ApisKeyboard",
       "title": "Keyboard",
       "url": "https://facebook.github.io/react-native/docs/alert"
     },
     "linking": {
-      "id": 5,
+      "id": 6,
       "route": "ApisLinking",
       "title": "Linking",
       "url": "https://docs.expo.io/versions/latest/workflow/linking"
     },
     "mapview": {
-      "id": 6,
+      "id": 7,
       "route": "ApisMapView",
       "title": "Map View",
       "url": "https://docs.expo.io/versions/latest/sdk/map-view/"
     },
     "vibration": {
-      "id": 7,
+      "id": 8,
       "route": "ApisVibration",
       "title": "Vibration",
       "url": "https://facebook.github.io/react-native/docs/vibration"
     },
     "Video": {
-      "id": 8,
+      "id": 9,
       "route": "ApisVideo",
       "title": "Video",
       "url": "https://docs.expo.io/versions/latest/sdk/video/"

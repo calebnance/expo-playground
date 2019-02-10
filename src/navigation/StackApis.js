@@ -5,12 +5,14 @@ import { gStyle } from '../api/constants';
 
 import navigationOptions from './defaultNavOptions';
 
-import ApisScreen from '../screens/Apis';
 import SvgApis from '../components/icons/Svg.Apis';
+
+import ApisScreen from '../screens/Apis';
 
 import AlertScreen from '../screens/Apis/Alert';
 import BrightnessScreen from '../screens/Apis/Brightness';
 import HapticScreen from '../screens/Apis/Haptic';
+import ImageManipulatorScreen from '../screens/Apis/ImageManipulator';
 import KeyboardScreen from '../screens/Apis/Keyboard';
 import LinkingScreen from '../screens/Apis/Linking';
 import MapViewScreen from '../screens/Apis/MapView';
@@ -43,6 +45,10 @@ export default createStackNavigator(
     },
     ApisHaptic: {
       screen: HapticScreen,
+      navigationOptions
+    },
+    ApisImageManipulator: {
+      screen: ImageManipulatorScreen,
       navigationOptions
     },
     ApisKeyboard: {
