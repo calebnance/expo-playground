@@ -42,7 +42,9 @@ export default {
     color: colors.white
   },
   navHeaderStyle: {
-    marginTop: device.iOS ? 0 : -device.statusBarHeight
+    // this was added for older android OS
+    // can't replicate consistently right now
+    // marginTop: device.iOS ? 0 : -device.statusBarHeight
   },
   navHeaderRightIconStyle: {
     borderWidth: 0,
