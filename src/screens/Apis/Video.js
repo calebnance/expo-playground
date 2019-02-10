@@ -143,7 +143,8 @@ class VideoScreen extends React.Component {
             icon={<SvgPause />}
             iconColor={isPaused ? colors.white : colors.brandPrimary}
             onPress={() => {
-              Haptic.impact(Medium);
+              if (device.iOS) Haptic.impact(Medium);
+
               this.video.pauseAsync();
               this.setState({ status: 'Paused' });
             }}
@@ -156,7 +157,8 @@ class VideoScreen extends React.Component {
             icon={<SvgStop />}
             iconColor={isStopped ? colors.white : colors.brandPrimary}
             onPress={() => {
-              Haptic.impact(Medium);
+              if (device.iOS) Haptic.impact(Medium);
+
               this.video.stopAsync();
               this.setState({ status: 'Stopped' });
             }}
@@ -169,7 +171,8 @@ class VideoScreen extends React.Component {
             icon={<SvgPlay />}
             iconColor={isPlaying ? colors.white : colors.brandPrimary}
             onPress={() => {
-              Haptic.impact(Medium);
+              if (device.iOS) Haptic.impact(Medium);
+
               this.video.playAsync();
               this.setState({ status: 'Playing' });
             }}
@@ -182,7 +185,8 @@ class VideoScreen extends React.Component {
             icon={<SvgLoop />}
             iconColor={looping ? colors.white : colors.brandPrimary}
             onPress={() => {
-              Haptic.impact(Medium);
+              if (device.iOS) Haptic.impact(Medium);
+
               this.setState(prevState => ({
                 looping: !prevState.looping,
                 status: 'Playing'
@@ -195,7 +199,8 @@ class VideoScreen extends React.Component {
           <TouchIcon
             icon={<SvgFullscreen />}
             onPress={() => {
-              Haptic.impact(Medium);
+              if (device.iOS) Haptic.impact(Medium);
+
               this.video.presentFullscreenPlayer();
             }}
           />
