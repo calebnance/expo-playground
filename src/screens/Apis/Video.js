@@ -40,6 +40,7 @@ class VideoScreen extends React.Component {
     this.timeoutCallback = null;
 
     this.handleCallback = this.handleCallback.bind(this);
+    this.handleFullscreenUpdate = this.handleFullscreenUpdate.bind(this);
     this.handlePlaybackUpdate = this.handlePlaybackUpdate.bind(this);
   }
 
@@ -58,6 +59,37 @@ class VideoScreen extends React.Component {
         callback: this.callbackMsgDefault
       });
     }, 2000);
+  }
+
+  handleFullscreenUpdate(data) {
+    const { fullscreenUpdate, status } = data;
+
+    // FULLSCREEN_UPDATE_PLAYER_WILL_DISMISS
+    if (fullscreenUpdate === 2) {
+      this.handleCallback('fullscreen WILL close');
+    }
+
+    // FULLSCREEN_UPDATE_PLAYER_DID_DISMISS
+    if (fullscreenUpdate === 3) {
+      this.handleCallback('fullscreen DID close');
+      if (status.isPlaying === false) {
+        // is it at the start or end?
+        if (
+          status.positionMillis < 900 ||
+          status.positionMillis === status.durationMillis
+        ) {
+          // this.video.stopAsync();
+          this.setState({ status: 'Stopped' });
+        } else {
+          // then it's paused
+          this.video.pauseAsync();
+          this.setState({ status: 'Paused' });
+        }
+      } else {
+        this.video.playAsync();
+        this.setState({ status: 'Playing' });
+      }
+    }
   }
 
   handlePlaybackUpdate(data) {
@@ -108,6 +140,7 @@ class VideoScreen extends React.Component {
         <Video
           isLooping={looping}
           isMuted
+          onFullscreenUpdate={data => this.handleFullscreenUpdate(data)}
           onPlaybackStatusUpdate={data => this.handlePlaybackUpdate(data)}
           progressUpdateIntervalMillis={1000}
           rate={1.0}
