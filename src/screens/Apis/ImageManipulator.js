@@ -1,13 +1,16 @@
 import React from 'react';
 import { Alert, Image, StyleSheet, Text, View } from 'react-native';
-import { Asset, ImageManipulator } from 'expo';
+import { Asset, Haptic, ImageManipulator, WebBrowser } from 'expo';
 import { colors, device, func, gStyle, images } from '../../api/constants';
 
+import TouchButton from '../../components/TouchButton';
 import TouchIcon from '../../components/TouchIcon';
 
 import SvgRotateLeft from '../../components/icons/Svg.RotateLeft';
 import SvgRotateRight from '../../components/icons/Svg.RotateRight';
 import SvgSave from '../../components/icons/Svg.Save';
+
+const { Medium } = Haptic.ImpactFeedbackStyle;
 
 class ImageManipulatorScreen extends React.Component {
   constructor(props) {
@@ -47,6 +50,9 @@ class ImageManipulatorScreen extends React.Component {
       { format: 'png' }
     );
 
+    // on iOS device, use Haptic feedback
+    if (device.iOS) Haptic.impact(Medium);
+
     this.setState({ image: manipResult });
   }
 
@@ -55,7 +61,10 @@ class ImageManipulatorScreen extends React.Component {
 
     const accessCameraRoll = await func.permitCameraRoll();
 
-    if (accessCameraRoll === 'granted') {
+    // on iOS device, use Haptic feedback
+    if (device.iOS) Haptic.impact(Medium);
+
+    if (accessCameraRoll) {
       await func.asyncSaveToCamRoll(image.uri);
 
       Alert.alert(
@@ -63,7 +72,7 @@ class ImageManipulatorScreen extends React.Component {
         "The image you modified has been saved to your device's image library",
         [
           {
-            onPress: () => console.log('cool'),
+            onPress: () => null,
             text: 'OK'
           }
         ],
@@ -87,6 +96,7 @@ class ImageManipulatorScreen extends React.Component {
             width: device.width
           }}
         />
+
         <View style={gStyle.pH16}>
           <View style={[gStyle.flexRowSpace, gStyle.p16]}>
             <View style={styles.containerLabel}>
@@ -115,6 +125,19 @@ class ImageManipulatorScreen extends React.Component {
             </View>
           </View>
         </View>
+
+        <View style={gStyle.spacer24} />
+
+        <TouchButton
+          btnStyle={[gStyle.btnPrimary, { alignSelf: 'center' }]}
+          btnTextStyle={gStyle.btnPrimaryText}
+          onPress={() =>
+            WebBrowser.openBrowserAsync(
+              'https://unsplash.com/photos/dZOFaMG-0Q0'
+            )
+          }
+          text="Photo Credit"
+        />
       </View>
     );
   }

@@ -40,6 +40,9 @@ Run Project Locally: `expo start`
   - [Alert](https://facebook.github.io/react-native/docs/alert)
   - [Brightness](https://docs.expo.io/versions/latest/sdk/brightness/)
   - [Haptic](https://docs.expo.io/versions/latest/sdk/haptic/)
+  - [Image Manipulator](https://docs.expo.io/versions/latest/sdk/imagemanipulator/)
+    - rotate image left or right by 90 degrees
+    - save modified image to camera roll (asks for permission to save)
   - [Keyboard](https://facebook.github.io/react-native/docs/keyboard)
   - [Linking](https://docs.expo.io/versions/latest/workflow/linking)
   - [MapView](https://docs.expo.io/versions/latest/sdk/map-view/)
