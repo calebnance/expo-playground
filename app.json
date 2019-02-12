@@ -17,11 +17,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": ["src/assets/**/*"],
     "android": {
+      "package": "com.calebnance.expoplayground",
       "versionCode": 1
     },
     "androidStatusBar": {
@@ -29,6 +27,20 @@
     },
     "ios": {
       "buildNumber": "0.0.1",
+      "bundleIdentifier": "com.calebnance.expoplayground",
+      "infoPlist": {
+        "LSApplicationQueriesSchemes": [
+          "googlemaps",
+          "nflx",
+          "spotify",
+          "twitter"
+        ],
+        "NSFaceIDUsageDescription": "to help the user see examples of face ID / touch ID usage",
+        "NSLocationAlwaysUsageDescription": "this app only uses location to better your experience",
+        "NSLocationWhenInUseUsageDescription": "this app only uses location to better your experience",
+        "NSPhotoLibraryAddUsageDescription": "to allow the user to save photo/screenshot",
+        "NSPhotoLibraryUsageDescription": "to allow the user to load a photo from their device to modify"
+      },
       "supportsTablet": true
     }
   }
