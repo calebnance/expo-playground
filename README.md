@@ -18,6 +18,16 @@ Expo CLI: `npm install -g expo-cli` (if not already installed)
 
 Run Project Locally: `expo start`
 
+**and publishing to the app store (TestFlight)**
+
+- iOS Build: `expo build:ios` (this builds the app binaries)
+- download *.ipa* file once available
+- open **xCode** -> **open developer tool** -> **application loader**
+  - make sure you create a password specifically for this app; [appleid](https://appleid.apple.com)
+- check on status of submission: [apple connect](https://appstoreconnect.apple.com)
+
+OTA Update: `expo publish`
+
 ---
 
 #### Linting
