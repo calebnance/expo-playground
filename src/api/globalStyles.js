@@ -1,5 +1,4 @@
 import colors from './colors';
-import device from './device';
 import fonts from './fonts';
 
 export default {
@@ -15,7 +14,7 @@ export default {
     flexDirection: 'row'
   },
   flexRowSpace: {
-    alignItems: 'center',
+    alignItems: 'flex-start',
     flexDirection: 'row',
     justifyContent: 'space-between'
   },

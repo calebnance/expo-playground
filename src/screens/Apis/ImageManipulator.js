@@ -1,32 +1,39 @@
 import React from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { Alert, Image, StyleSheet, Text, View } from 'react-native';
 import { Asset, ImageManipulator } from 'expo';
-import { colors, device, gStyle, images } from '../../api/constants';
+import { colors, device, func, gStyle, images } from '../../api/constants';
 
 import TouchIcon from '../../components/TouchIcon';
 
 import SvgRotateLeft from '../../components/icons/Svg.RotateLeft';
 import SvgRotateRight from '../../components/icons/Svg.RotateRight';
+import SvgSave from '../../components/icons/Svg.Save';
 
 class ImageManipulatorScreen extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      image: null
+      image: null,
+      imageHeight: null
     };
+
     this.rotate90 = this.rotate90.bind(this);
+    this.save = this.save.bind(this);
   }
 
   componentDidMount() {
+    const { height, width } = Image.resolveAssetSource(images.records);
+    const responsiveHeight = Math.round((device.width * height) / width);
+
     (async () => {
       const image = Asset.fromModule(images.records);
       await image.downloadAsync();
 
       this.setState({
-        image
+        image,
+        imageHeight: responsiveHeight
       });
-      console.log(image);
     })();
   }
 
@@ -43,43 +50,85 @@ class ImageManipulatorScreen extends React.Component {
     this.setState({ image: manipResult });
   }
 
-  render() {
+  async save() {
     const { image } = this.state;
+
+    const accessCameraRoll = await func.permitCameraRoll();
+
+    if (accessCameraRoll === 'granted') {
+      await func.asyncSaveToCamRoll(image.uri);
+
+      Alert.alert(
+        'Image Saved!',
+        "The image you modified has been saved to your device's image library",
+        [
+          {
+            onPress: () => console.log('cool'),
+            text: 'OK'
+          }
+        ],
+        {
+          cancelable: false
+        }
+      );
+    }
+  }
+
+  render() {
+    const { image, imageHeight } = this.state;
 
     return (
       <View style={gStyle.container}>
-        <View style={gStyle.spacer24} />
-
-        <View style={gStyle.pH16}>
-          <View style={[gStyle.flexRowSpace, gStyle.p16]}>
-            <TouchIcon
-              icon={<SvgRotateRight />}
-              iconColor={colors.brandPrimary}
-              onPress={() => this.rotate90('right')}
-            />
-            <TouchIcon
-              icon={<SvgRotateLeft />}
-              iconColor={colors.brandPrimary}
-              onPress={() => this.rotate90('left')}
-            />
-          </View>
-        </View>
-
         <Image
           source={image}
-          style={{ height: 300, resizeMode: 'contain', width: device.width }}
+          style={{
+            height: imageHeight,
+            resizeMode: 'contain',
+            width: device.width
+          }}
         />
+        <View style={gStyle.pH16}>
+          <View style={[gStyle.flexRowSpace, gStyle.p16]}>
+            <View style={styles.containerLabel}>
+              <TouchIcon
+                icon={<SvgRotateLeft />}
+                iconColor={colors.brandPrimary}
+                onPress={() => this.rotate90('left')}
+              />
+              <Text style={styles.label}>Rotate Left</Text>
+            </View>
+            <View style={styles.containerLabel}>
+              <TouchIcon
+                icon={<SvgSave />}
+                iconColor={colors.brandPrimary}
+                onPress={() => this.save()}
+              />
+              <Text style={styles.label}>Save Image</Text>
+            </View>
+            <View style={styles.containerLabel}>
+              <TouchIcon
+                icon={<SvgRotateRight />}
+                iconColor={colors.brandPrimary}
+                onPress={() => this.rotate90('right')}
+              />
+              <Text style={styles.label}>Rotate Right</Text>
+            </View>
+          </View>
+        </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  placeholder: {
+  containerLabel: {
     alignItems: 'center',
-    height: 40,
-    marginBottom: 8,
-    width: '100%'
+    width: 58
+  },
+  label: {
+    color: colors.brandPrimary,
+    marginTop: 8,
+    textAlign: 'center'
   }
 });
 
