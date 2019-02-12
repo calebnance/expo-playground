@@ -1,63 +1,72 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
-import { ImageManipulator } from 'expo';
-import { device, gStyle, images } from '../../api/constants';
+import { Image, StyleSheet, View } from 'react-native';
+import { Asset, ImageManipulator } from 'expo';
+import { colors, device, gStyle, images } from '../../api/constants';
 
-import TouchButton from '../../components/TouchButton';
+import TouchIcon from '../../components/TouchIcon';
+
+import SvgRotateLeft from '../../components/icons/Svg.RotateLeft';
+import SvgRotateRight from '../../components/icons/Svg.RotateRight';
 
 class ImageManipulatorScreen extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      imageUri: images.records
+      image: null
     };
-
-    this.allowAccessToPhotos = this.allowAccessToPhotos.bind(this);
     this.rotate90 = this.rotate90.bind(this);
   }
 
-  allowAccessToPhotos() {
-    console.log('TODO :: ACCESS CHECK');
+  componentDidMount() {
+    (async () => {
+      const image = Asset.fromModule(images.records);
+      await image.downloadAsync();
+
+      this.setState({
+        image
+      });
+      console.log(image);
+    })();
   }
 
-  async rotate90() {
-    const { imageUri } = this.state;
+  async rotate90(direction) {
+    const { image } = this.state;
+    const rotate = direction === 'right' ? 90 : -90;
 
     const manipResult = await ImageManipulator.manipulateAsync(
-      imageUri,
-      [{ rotate: 90 }],
+      image.localUri || image.uri,
+      [{ rotate }],
       { format: 'png' }
     );
-    this.setState({ imageUri: manipResult });
+
+    this.setState({ image: manipResult });
   }
 
   render() {
-    const { imageUri } = this.state;
+    const { image } = this.state;
 
     return (
       <View style={gStyle.container}>
         <View style={gStyle.spacer24} />
 
         <View style={gStyle.pH16}>
-          <Text style={gStyle.paragraph}>Some text about something here.</Text>
-
-          <TouchButton
-            btnStyle={gStyle.btnPrimary}
-            btnTextStyle={gStyle.btnPrimaryText}
-            onPress={() => this.allowAccessToPhotos()}
-            text="Allow Access to Photos"
-          />
-          <TouchButton
-            btnStyle={gStyle.btnPrimary}
-            btnTextStyle={gStyle.btnPrimaryText}
-            onPress={() => this.rotate90()}
-            text="Rotate 90"
-          />
+          <View style={[gStyle.flexRowSpace, gStyle.p16]}>
+            <TouchIcon
+              icon={<SvgRotateRight />}
+              iconColor={colors.brandPrimary}
+              onPress={() => this.rotate90('right')}
+            />
+            <TouchIcon
+              icon={<SvgRotateLeft />}
+              iconColor={colors.brandPrimary}
+              onPress={() => this.rotate90('left')}
+            />
+          </View>
         </View>
 
         <Image
-          source={imageUri}
+          source={image}
           style={{ height: 300, resizeMode: 'contain', width: device.width }}
         />
       </View>

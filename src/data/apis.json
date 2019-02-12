@@ -19,6 +19,12 @@
       "title": "Haptic",
       "url": "https://docs.expo.io/versions/latest/sdk/haptic/"
     },
+    "imagemanipulator": {
+      "id": 4,
+      "route": "ApisImageManipulator",
+      "title": "Image Manipulator",
+      "url": "https://docs.expo.io/versions/latest/sdk/imagemanipulator/"
+    },
     "keyboard": {
       "id": 5,
       "route": "ApisKeyboard",
