@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "Expo Playground",
+    "name": "Playground",
     "description": "an expo playground... examples of what apis are available",
     "scheme": "expoplayground",
     "slug": "expoplayground",
     "privacy": "public",
     "sdkVersion": "32.0.0",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "platforms": ["ios", "android"],
     "githubUrl": "https://github.com/calebnance/expo-playground",
     "orientation": "portrait",
@@ -20,13 +20,13 @@
     "assetBundlePatterns": ["src/assets/**/*"],
     "android": {
       "package": "com.calebnance.expoplayground",
-      "versionCode": 1
+      "versionCode": 2
     },
     "androidStatusBar": {
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "buildNumber": "0.0.1",
+      "buildNumber": "0.0.2",
       "bundleIdentifier": "com.calebnance.expoplayground",
       "infoPlist": {
         "LSApplicationQueriesSchemes": [

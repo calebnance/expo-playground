@@ -2,7 +2,6 @@ import React from 'react';
 import {
   FlatList,
   StyleSheet,
-  Switch,
   Text,
   TouchableOpacity,
   View
@@ -13,7 +12,7 @@ import locations from '../../data/locations.json';
 
 import SvgMapPin from '../../components/icons/Svg.MapPin';
 
-const { PROVIDER_GOOGLE } = MapView;
+// const { PROVIDER_GOOGLE } = MapView;
 const locationsArray = Object.values(locations);
 
 class MapViewScreen extends React.Component {
@@ -24,20 +23,20 @@ class MapViewScreen extends React.Component {
       lat: parseFloat(locationsArray[0].lat),
       lon: parseFloat(locationsArray[0].lon),
       location: 'New York',
-      mapProvider: PROVIDER_GOOGLE,
-      useApple: false
+      // mapProvider: PROVIDER_GOOGLE,
+      mapProvider: null
     };
 
-    this.toggleMapService = this.toggleMapService.bind(this);
+    // this.toggleMapService = this.toggleMapService.bind(this);
     this.handleLocationChange = this.handleLocationChange.bind(this);
   }
 
-  toggleMapService(value) {
-    this.setState({
-      mapProvider: value ? null : PROVIDER_GOOGLE,
-      useApple: value
-    });
-  }
+  // toggleMapService(value) {
+  //   this.setState({
+  //     mapProvider: value ? null : PROVIDER_GOOGLE,
+  //     useApple: value
+  //   });
+  // }
 
   handleLocationChange(name) {
     const { lat, lon } = locations[name];
@@ -50,20 +49,11 @@ class MapViewScreen extends React.Component {
   }
 
   render() {
-    const { lat, lon, location, mapProvider, useApple } = this.state;
+    const { lat, lon, location, mapProvider } = this.state;
 
     return (
       <View style={gStyle.container}>
         <View style={gStyle.spacer24} />
-        {device.iOS && (
-          <View style={styles.lineItem}>
-            <Text>Use Apple Maps?</Text>
-            <Switch
-              onValueChange={val => this.toggleMapService(val)}
-              value={useApple}
-            />
-          </View>
-        )}
 
         <MapView
           style={{
@@ -108,6 +98,18 @@ class MapViewScreen extends React.Component {
     );
   }
 }
+
+/*
+{device.iOS && (
+  <View style={styles.lineItem}>
+    <Text>Use Apple Maps?</Text>
+    <Switch
+      onValueChange={val => this.toggleMapService(val)}
+      value={useApple}
+    />
+  </View>
+)}
+*/
 
 const styles = StyleSheet.create({
   lineItem: {
