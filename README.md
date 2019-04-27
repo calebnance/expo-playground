@@ -2,15 +2,13 @@
 
 example usage of Expo and React Native's API
 
----
+## Table of Contents
 
 - [Install & Build](#install--build)
 - [Linting](#linting)
 - [Release Notes](#release-notes)
 
----
-
-#### Install & Build
+## Install & Build
 
 Install: `yarn install`
 
@@ -18,7 +16,7 @@ Expo CLI: `npm install -g expo-cli` (if not already installed)
 
 Run Project Locally: `expo start`
 
-**and publishing to the app store (TestFlight)**
+### and publishing to the app store (TestFlight)
 
 - iOS Build: `expo build:ios` (this builds the app binaries)
 - download *.ipa* file once available
@@ -28,9 +26,7 @@ Run Project Locally: `expo start`
 
 OTA Update: `expo publish`
 
----
-
-#### Linting
+## Linting
 
 - prettier and airbnb config
 - make sure you have [prettier package](https://atom.io/packages/prettier-atom) installed on your atom/vscode editor
@@ -40,11 +36,9 @@ OTA Update: `expo publish`
   - automatic format on save (toggle format on save)
 - be aware of the `.prettierignore` file
 
----
+## Release Notes
 
-#### Release Notes
-
-**version 0.0.1 (current)**
+### version 0.0.1 (current)
 
 - Examples of:
   - [Alert](https://facebook.github.io/react-native/docs/alert)
