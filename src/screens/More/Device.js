@@ -1,12 +1,10 @@
 import React from 'react';
-import { Dimensions, ScrollView } from 'react-native';
+import { ScrollView } from 'react-native';
 import { Constants } from 'expo';
 import { device, gStyle } from '../../api/constants';
 
+// components
 import LineItem from '../../components/LineItem';
-
-const windowInfo = Dimensions.get('window');
-const { height, width } = windowInfo;
 
 const Device = () => (
   <ScrollView style={gStyle.container}>
@@ -17,7 +15,10 @@ const Device = () => (
     />
     <LineItem label="Device Name" text={Constants.deviceName} />
     <LineItem label="Device Year" text={Constants.deviceYearClass} />
-    <LineItem label="Device Dimensions" text={`${height}h by ${width}w`} />
+    <LineItem
+      label="Device Dimensions"
+      text={`${device.height}h by ${device.width}w`}
+    />
   </ScrollView>
 );
 

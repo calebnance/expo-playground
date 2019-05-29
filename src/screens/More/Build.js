@@ -3,6 +3,7 @@ import { ScrollView } from 'react-native';
 import { Constants } from 'expo';
 import { gStyle } from '../../api/constants';
 
+// components
 import LineItem from '../../components/LineItem';
 
 const Build = () => (

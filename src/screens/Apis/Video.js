@@ -3,8 +3,10 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Haptic, Video } from 'expo';
 import { colors, device, fonts, gStyle, util } from '../../api/constants';
 
+// components
 import TouchIcon from '../../components/TouchIcon';
 
+// icons
 import SvgFullscreen from '../../components/icons/Svg.Fullscreen';
 import SvgLoop from '../../components/icons/Svg.Loop';
 import SvgPause from '../../components/icons/Svg.Pause';

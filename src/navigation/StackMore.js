@@ -5,9 +5,11 @@ import { gStyle } from '../api/constants';
 
 import navigationOptions from './defaultNavOptions';
 
-import MoreScreen from '../screens/More';
+// icons
 import SvgMenu from '../components/icons/Svg.Menu';
 
+// screens
+import MoreScreen from '../screens/More';
 import BuildScreen from '../screens/More/Build';
 import DeviceScreen from '../screens/More/Device';
 

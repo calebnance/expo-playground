@@ -2,10 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { createStackNavigator } from 'react-navigation';
 
-import navigationOptions from './defaultOptions';
+import navigationOptions from './defaultNavOptions';
 
-import ComponentsScreen from '../screens/Components';
+// icons
 import SvgComponents from '../components/icons/Svg.Components';
+
+// screens
+import ComponentsScreen from '../screens/Components';
 
 const Icon = ({ focused }) => <SvgComponents active={focused} />;
 

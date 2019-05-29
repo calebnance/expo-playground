@@ -2,6 +2,7 @@ import React from 'react';
 import { Linking, ScrollView, Text, View } from 'react-native';
 import { gStyle } from '../../api/constants';
 
+// components
 import TouchButton from '../../components/TouchButton';
 
 const LinkingScreen = () => (

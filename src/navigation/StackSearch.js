@@ -2,10 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { createStackNavigator } from 'react-navigation';
 
-import navigationOptions from './defaultOptions';
+import navigationOptions from './defaultNavOptions';
 
-import SearchScreen from '../screens/Search';
+// icons
 import SvgSearch from '../components/icons/Svg.Search';
+
+// screens
+import SearchScreen from '../screens/Search';
 
 const Icon = ({ focused }) => <SvgSearch active={focused} />;
 

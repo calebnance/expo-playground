@@ -3,6 +3,7 @@ import { ScrollView, Text, View } from 'react-native';
 import { Haptic } from 'expo';
 import { fonts, gStyle } from '../../api/constants';
 
+// components
 import TouchButton from '../../components/TouchButton';
 
 // broken on SDK 32, waiting for fix

@@ -5,10 +5,11 @@ import { gStyle } from '../api/constants';
 
 import navigationOptions from './defaultNavOptions';
 
+// icons
 import SvgApis from '../components/icons/Svg.Apis';
 
+// screens
 import ApisScreen from '../screens/Apis';
-
 import AlertScreen from '../screens/Apis/Alert';
 import BrightnessScreen from '../screens/Apis/Brightness';
 import HapticScreen from '../screens/Apis/Haptic';

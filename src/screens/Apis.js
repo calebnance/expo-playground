@@ -4,13 +4,12 @@ import { Constants } from 'expo';
 import PropTypes from 'prop-types';
 import { device, gStyle } from '../api/constants';
 
+// components
 import TouchTextIcon from '../components/TouchTextIcon';
 
 import apis from '../data/apis.json';
 
-const Apis = props => {
-  const { navigation } = props;
-
+const Apis = ({ navigation }) => {
   const { data } = apis;
   const dataArray = Object.values(data);
 

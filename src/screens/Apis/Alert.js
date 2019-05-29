@@ -2,6 +2,7 @@ import React from 'react';
 import { Alert, StyleSheet, Text, View } from 'react-native';
 import { gStyle } from '../../api/constants';
 
+// components
 import TouchButton from '../../components/TouchButton';
 
 class AlertScreen extends React.Component {

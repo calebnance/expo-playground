@@ -10,6 +10,7 @@ import { MapView } from 'expo';
 import { colors, device, fonts, gStyle } from '../../api/constants';
 import locations from '../../data/locations.json';
 
+// icons
 import SvgMapPin from '../../components/icons/Svg.MapPin';
 
 // const { PROVIDER_GOOGLE } = MapView;

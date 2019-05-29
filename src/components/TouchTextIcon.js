@@ -3,30 +3,27 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { colors, fonts } from '../api/constants';
 
+// icons
 import ArrowRight from './icons/Svg.ArrowRight';
 
-const TouchTextIcon = props => {
-  const { icon, iconSize, onPress, text, textMuted, width } = props;
-
-  return (
-    <TouchableOpacity
-      activeOpacity={0.7}
-      onPress={onPress}
-      style={[styles.container, { width }]}
-    >
-      <View style={styles.containerText}>
-        <Text style={styles.text}>{text}</Text>
-        {textMuted && <Text style={styles.textMuted}>{textMuted}</Text>}
-      </View>
-      <View style={styles.icon}>
-        {React.cloneElement(icon, {
-          fill: colors.blue,
-          size: iconSize
-        })}
-      </View>
-    </TouchableOpacity>
-  );
-};
+const TouchTextIcon = ({ icon, iconSize, onPress, text, textMuted, width }) => (
+  <TouchableOpacity
+    activeOpacity={0.7}
+    onPress={onPress}
+    style={[styles.container, { width }]}
+  >
+    <View style={styles.containerText}>
+      <Text style={styles.text}>{text}</Text>
+      {textMuted && <Text style={styles.textMuted}>{textMuted}</Text>}
+    </View>
+    <View style={styles.icon}>
+      {React.cloneElement(icon, {
+        fill: colors.blue,
+        size: iconSize
+      })}
+    </View>
+  </TouchableOpacity>
+);
 
 TouchTextIcon.defaultProps = {
   icon: <ArrowRight />,

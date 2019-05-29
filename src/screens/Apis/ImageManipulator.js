@@ -3,9 +3,11 @@ import { Alert, Image, StyleSheet, Text, View } from 'react-native';
 import { Asset, Haptic, ImageManipulator, WebBrowser } from 'expo';
 import { colors, device, func, gStyle, images } from '../../api/constants';
 
+// components
 import TouchButton from '../../components/TouchButton';
 import TouchIcon from '../../components/TouchIcon';
 
+// icons
 import SvgRotateLeft from '../../components/icons/Svg.RotateLeft';
 import SvgRotateRight from '../../components/icons/Svg.RotateRight';
 import SvgSave from '../../components/icons/Svg.Save';

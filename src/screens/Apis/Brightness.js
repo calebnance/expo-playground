@@ -3,6 +3,7 @@ import { ScrollView, Slider, StyleSheet, Text, View } from 'react-native';
 import { Brightness } from 'expo';
 import { colors, device, gStyle } from '../../api/constants';
 
+// components
 import TouchButton from '../../components/TouchButton';
 
 class BrightnessScreen extends React.Component {
