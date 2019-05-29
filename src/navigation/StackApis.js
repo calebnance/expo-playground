@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { createStackNavigator } from 'react-navigation';
-import { gStyle } from '../api/constants';
+import { gStyle } from '../constants';
 
 import navigationOptions from './defaultNavOptions';
 
+// icons
 import SvgApis from '../components/icons/Svg.Apis';
 
+// screens
 import ApisScreen from '../screens/Apis';
-
 import AlertScreen from '../screens/Apis/Alert';
 import BrightnessScreen from '../screens/Apis/Brightness';
 import HapticScreen from '../screens/Apis/Haptic';

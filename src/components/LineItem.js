@@ -1,18 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
-import { colors, fonts } from '../api/constants';
+import { colors, fonts } from '../constants';
 
-const LineItem = props => {
-  const { label, text } = props;
-
-  return (
-    <View style={styles.lineItem}>
-      <Text style={styles.label}>{`${label}:`}</Text>
-      <Text style={styles.text}>{text}</Text>
-    </View>
-  );
-};
+const LineItem = ({ label, text }) => (
+  <View style={styles.lineItem}>
+    <Text style={styles.label}>{`${label}:`}</Text>
+    <Text style={styles.text}>{text}</Text>
+  </View>
+);
 
 LineItem.propTypes = {
   // required

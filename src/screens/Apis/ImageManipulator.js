@@ -1,11 +1,13 @@
 import React from 'react';
 import { Alert, Image, StyleSheet, Text, View } from 'react-native';
 import { Asset, Haptic, ImageManipulator, WebBrowser } from 'expo';
-import { colors, device, func, gStyle, images } from '../../api/constants';
+import { colors, device, func, gStyle, images } from '../../constants';
 
+// components
 import TouchButton from '../../components/TouchButton';
 import TouchIcon from '../../components/TouchIcon';
 
+// icons
 import SvgRotateLeft from '../../components/icons/Svg.RotateLeft';
 import SvgRotateRight from '../../components/icons/Svg.RotateRight';
 import SvgSave from '../../components/icons/Svg.Save';
@@ -59,13 +61,13 @@ class ImageManipulatorScreen extends React.Component {
   async save() {
     const { image } = this.state;
 
-    const accessCameraRoll = await func.permitCameraRoll();
+    const accessCameraRoll = await func.cameraRollAccessAsync();
 
     // on iOS device, use Haptic feedback
     if (device.iOS) Haptic.impact(Medium);
 
     if (accessCameraRoll) {
-      await func.asyncSaveToCamRoll(image.uri);
+      await func.saveToCameraRollAsync(image.uri);
 
       Alert.alert(
         'Image Saved!',

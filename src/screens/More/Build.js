@@ -1,8 +1,9 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 import { Constants } from 'expo';
-import { gStyle } from '../../api/constants';
+import { gStyle } from '../../constants';
 
+// components
 import LineItem from '../../components/LineItem';
 
 const Build = () => (

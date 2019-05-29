@@ -1,10 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Haptic, Video } from 'expo';
-import { colors, device, fonts, gStyle, util } from '../../api/constants';
+import { colors, device, fonts, func, gStyle } from '../../constants';
 
+// components
 import TouchIcon from '../../components/TouchIcon';
 
+// icons
 import SvgFullscreen from '../../components/icons/Svg.Fullscreen';
 import SvgLoop from '../../components/icons/Svg.Loop';
 import SvgPause from '../../components/icons/Svg.Pause';
@@ -99,7 +101,7 @@ class VideoScreen extends React.Component {
     // video loaded?
     if (videoLoaded === false && isLoaded) {
       const { durationMillis } = data;
-      const videoDuration = util.formatTime(durationMillis);
+      const videoDuration = func.formatTime(durationMillis);
 
       this.handleCallback('video loaded');
       this.setState({
@@ -114,7 +116,7 @@ class VideoScreen extends React.Component {
       this.handleCallback(`video ${finishedMsg}`);
     }
 
-    const videoCurrent = util.formatTime(positionMillis);
+    const videoCurrent = func.formatTime(positionMillis);
     this.setState({
       current: videoCurrent
     });

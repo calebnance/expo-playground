@@ -1,20 +1,16 @@
 import React from 'react';
 import { Svg } from 'expo';
 import PropTypes from 'prop-types';
-import { colors } from '../../api/constants';
+import { colors } from '../../constants';
 
-const SvgStop = props => {
-  const { fill, size } = props;
-
-  return (
-    <Svg height={size} width={size} viewBox="0 0 24 24">
-      <Svg.Path
-        d="M19 2H5C3.3 2 2 3.3 2 5v14c0 1.7 1.3 3 3 3h14c1.7 0 3-1.3 3-3V5c0-1.7-1.3-3-3-3zm1 17c0 .6-.4 1-1 1H5c-.6 0-1-.4-1-1V5c0-.6.4-1 1-1h14c.6 0 1 .4 1 1v14z"
-        fill={fill}
-      />
-    </Svg>
-  );
-};
+const SvgStop = ({ fill, size }) => (
+  <Svg height={size} width={size} viewBox="0 0 24 24">
+    <Svg.Path
+      d="M19 2H5C3.3 2 2 3.3 2 5v14c0 1.7 1.3 3 3 3h14c1.7 0 3-1.3 3-3V5c0-1.7-1.3-3-3-3zm1 17c0 .6-.4 1-1 1H5c-.6 0-1-.4-1-1V5c0-.6.4-1 1-1h14c.6 0 1 .4 1 1v14z"
+      fill={fill}
+    />
+  </Svg>
+);
 
 SvgStop.defaultProps = {
   fill: colors.brandPrimary,

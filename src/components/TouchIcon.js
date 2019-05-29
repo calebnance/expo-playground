@@ -1,24 +1,20 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
-import { colors } from '../api/constants';
+import { colors } from '../constants';
 
-const TouchIcon = props => {
-  const { icon, iconColor, iconSize, style, onPress } = props;
-
-  return (
-    <TouchableOpacity
-      activeOpacity={0.7}
-      onPress={onPress}
-      style={[styles.container, style]}
-    >
-      {React.cloneElement(icon, {
-        fill: iconColor,
-        size: iconSize
-      })}
-    </TouchableOpacity>
-  );
-};
+const TouchIcon = ({ icon, iconColor, iconSize, style, onPress }) => (
+  <TouchableOpacity
+    activeOpacity={0.7}
+    onPress={onPress}
+    style={[styles.container, style]}
+  >
+    {React.cloneElement(icon, {
+      fill: iconColor,
+      size: iconSize
+    })}
+  </TouchableOpacity>
+);
 
 TouchIcon.defaultProps = {
   iconColor: colors.black,

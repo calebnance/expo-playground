@@ -1,11 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
-import { gStyle } from '../api/constants';
+import { gStyle } from '../constants';
 
-const TouchButton = props => {
-  const { btnStyle, btnTextStyle, onPress, text, minWidth } = props;
-
+const TouchButton = ({ btnStyle, btnTextStyle, onPress, text, minWidth }) => {
   const container = StyleSheet.flatten([gStyle.btn, btnStyle, { minWidth }]);
   const textStyle = StyleSheet.flatten([gStyle.btnText, btnTextStyle]);
 

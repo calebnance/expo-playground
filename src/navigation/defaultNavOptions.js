@@ -1,6 +1,6 @@
 import React from 'react';
 import { WebBrowser } from 'expo';
-import { gStyle } from '../api/constants';
+import { gStyle } from '../constants';
 
 import TouchIcon from '../components/TouchIcon';
 

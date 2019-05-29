@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { createStackNavigator } from 'react-navigation';
-import { gStyle } from '../api/constants';
+import { gStyle } from '../constants';
 
 import navigationOptions from './defaultNavOptions';
 
-import MoreScreen from '../screens/More';
+// icons
 import SvgMenu from '../components/icons/Svg.Menu';
 
+// screens
+import MoreScreen from '../screens/More';
 import BuildScreen from '../screens/More/Build';
 import DeviceScreen from '../screens/More/Device';
 
