@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView, Slider, StyleSheet, Text, View } from 'react-native';
 import { Brightness } from 'expo';
-import { colors, device, gStyle } from '../../api/constants';
+import { colors, device, gStyle } from '../../constants';
 
 // components
 import TouchButton from '../../components/TouchButton';

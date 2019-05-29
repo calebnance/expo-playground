@@ -8,7 +8,7 @@ import {
   TouchableWithoutFeedback,
   View
 } from 'react-native';
-import { colors, fonts, gStyle } from '../../api/constants';
+import { colors, fonts, gStyle } from '../../constants';
 
 class KeyboardScreen extends React.Component {
   constructor(props) {

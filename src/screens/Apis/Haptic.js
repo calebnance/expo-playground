@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { Haptic } from 'expo';
-import { fonts, gStyle } from '../../api/constants';
+import { fonts, gStyle } from '../../constants';
 
 // components
 import TouchButton from '../../components/TouchButton';

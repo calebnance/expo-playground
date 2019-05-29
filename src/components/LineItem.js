@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
-import { colors, fonts } from '../api/constants';
+import { colors, fonts } from '../constants';
 
 const LineItem = ({ label, text }) => (
   <View style={styles.lineItem}>

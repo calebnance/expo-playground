@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, Vibration, View } from 'react-native';
-import { device, gStyle } from '../../api/constants';
+import { device, gStyle } from '../../constants';
 
 // components
 import TouchButton from '../../components/TouchButton';

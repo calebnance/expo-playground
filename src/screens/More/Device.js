@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 import { Constants } from 'expo';
-import { device, gStyle } from '../../api/constants';
+import { device, gStyle } from '../../constants';
 
 // components
 import LineItem from '../../components/LineItem';

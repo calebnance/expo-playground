@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
-import { colors } from '../api/constants';
+import { colors } from '../constants';
 
 const TouchIcon = ({ icon, iconColor, iconSize, style, onPress }) => (
   <TouchableOpacity

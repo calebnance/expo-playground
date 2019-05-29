@@ -1,6 +1,6 @@
 import React from 'react';
 import { Alert, StyleSheet, Text, View } from 'react-native';
-import { gStyle } from '../../api/constants';
+import { gStyle } from '../../constants';
 
 // components
 import TouchButton from '../../components/TouchButton';
