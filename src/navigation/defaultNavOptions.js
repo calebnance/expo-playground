@@ -1,9 +1,11 @@
 import React from 'react';
-import { WebBrowser } from 'expo';
+import * as WebBrowser from 'expo-web-browser';
 import { gStyle } from '../constants';
 
+// components
 import TouchIcon from '../components/TouchIcon';
 
+// icons
 import SvgOpenBook from '../components/icons/Svg.OpenBook';
 
 export default ({ navigation }) => ({

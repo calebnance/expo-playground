@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
-import { MapView } from 'expo';
+import MapView from 'react-native-maps';
 import { colors, device, fonts, gStyle } from '../../constants';
 import locations from '../../data/locations.json';
 

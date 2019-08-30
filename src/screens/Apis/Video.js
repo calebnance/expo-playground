@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Video } from 'expo';
 import * as Haptics from 'expo-haptics';
+import { Video } from 'expo-av';
 import { colors, device, fonts, func, gStyle } from '../../constants';
 
 // components

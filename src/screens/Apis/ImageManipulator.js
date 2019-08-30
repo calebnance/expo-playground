@@ -1,8 +1,9 @@
 import React from 'react';
 import { Alert, Image, StyleSheet, Text, View } from 'react-native';
-import { ImageManipulator, WebBrowser } from 'expo';
 import { Asset } from 'expo-asset';
 import * as Haptics from 'expo-haptics';
+import * as ImageManipulator from 'expo-image-manipulator';
+import * as WebBrowser from 'expo-web-browser';
 import { colors, device, func, gStyle, images } from '../../constants';
 
 // components

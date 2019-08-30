@@ -1,6 +1,7 @@
 import { CameraRoll, Image } from 'react-native';
-import { Font, Permissions } from 'expo';
 import { Asset } from 'expo-asset';
+import * as Font from 'expo-font';
+import * as Permissions from 'expo-permissions';
 
 import preloadImages from './preloadImages';
 
