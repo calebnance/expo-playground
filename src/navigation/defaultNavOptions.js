@@ -7,7 +7,6 @@ import TouchIcon from '../components/TouchIcon';
 import SvgOpenBook from '../components/icons/Svg.OpenBook';
 
 export default ({ navigation }) => ({
-  headerStyle: gStyle.navHeaderStyle,
   headerRight: (
     <TouchIcon
       icon={<SvgOpenBook />}

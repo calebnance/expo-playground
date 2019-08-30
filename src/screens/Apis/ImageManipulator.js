@@ -1,6 +1,8 @@
 import React from 'react';
 import { Alert, Image, StyleSheet, Text, View } from 'react-native';
-import { Asset, Haptic, ImageManipulator, WebBrowser } from 'expo';
+import { ImageManipulator, WebBrowser } from 'expo';
+import { Asset } from 'expo-asset';
+import * as Haptics from 'expo-haptics';
 import { colors, device, func, gStyle, images } from '../../constants';
 
 // components
@@ -12,7 +14,7 @@ import SvgRotateLeft from '../../components/icons/Svg.RotateLeft';
 import SvgRotateRight from '../../components/icons/Svg.RotateRight';
 import SvgSave from '../../components/icons/Svg.Save';
 
-const { Medium } = Haptic.ImpactFeedbackStyle;
+const { Medium } = Haptics.ImpactFeedbackStyle;
 
 class ImageManipulatorScreen extends React.Component {
   constructor(props) {
@@ -53,7 +55,7 @@ class ImageManipulatorScreen extends React.Component {
     );
 
     // on iOS device, use Haptic feedback
-    if (device.iOS) Haptic.impact(Medium);
+    if (device.iOS) Haptics.impactAsync(Medium);
 
     this.setState({ image: manipResult });
   }
@@ -64,7 +66,7 @@ class ImageManipulatorScreen extends React.Component {
     const accessCameraRoll = await func.cameraRollAccessAsync();
 
     // on iOS device, use Haptic feedback
-    if (device.iOS) Haptic.impact(Medium);
+    if (device.iOS) Haptics.impactAsync(Medium);
 
     if (accessCameraRoll) {
       await func.saveToCameraRollAsync(image.uri);

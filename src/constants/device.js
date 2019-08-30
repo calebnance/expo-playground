@@ -1,5 +1,4 @@
 import { Dimensions, Platform } from 'react-native';
-import { Constants } from 'expo';
 
 // is iPhoneX, iPhoneXs, iPhoneXr, iPhoneXs Max
 const iOS = Platform.OS === 'ios';
@@ -26,6 +25,5 @@ export default {
   iOS,
   iPhoneX,
   isPad,
-  statusBarHeight: Constants.statusBarHeight,
   width
 };

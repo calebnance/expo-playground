@@ -1,7 +1,7 @@
 import React from 'react';
-import { FlatList, View } from 'react-native';
-import { Constants } from 'expo';
 import PropTypes from 'prop-types';
+import { FlatList, View } from 'react-native';
+import Constants from 'expo-constants';
 import { device, gStyle } from '../constants';
 
 // components

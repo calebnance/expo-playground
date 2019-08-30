@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, Text, View } from 'react-native';
-import { Haptic } from 'expo';
+import * as Haptics from 'expo-haptics';
 import { fonts, gStyle } from '../../constants';
 
 // components
@@ -10,7 +10,7 @@ import TouchButton from '../../components/TouchButton';
 // https://github.com/expo/expo/issues/3224
 // const { Success, Warning, Error } = Haptic.NotificationFeedbackType;
 
-const { Light, Medium, Heavy } = Haptic.ImpactFeedbackStyle;
+const { Light, Medium, Heavy } = Haptics.ImpactFeedbackStyle;
 
 const HapticScreen = () => (
   <ScrollView style={gStyle.container}>
@@ -28,7 +28,7 @@ const HapticScreen = () => (
       <TouchButton
         btnStyle={[gStyle.btnPrimary, { alignSelf: 'center' }]}
         btnTextStyle={gStyle.btnPrimaryText}
-        onPress={() => Haptic.selection()}
+        onPress={() => Haptics.selectionAsync()}
         text="Simple"
       />
 
@@ -39,21 +39,21 @@ const HapticScreen = () => (
       <TouchButton
         btnStyle={[gStyle.btnPrimary, { alignSelf: 'center' }]}
         btnTextStyle={gStyle.btnPrimaryText}
-        onPress={() => Haptic.impact(Light)}
+        onPress={() => Haptics.impactAsync(Light)}
         text="Light"
       />
 
       <TouchButton
         btnStyle={[gStyle.btnPrimary, { alignSelf: 'center' }]}
         btnTextStyle={gStyle.btnPrimaryText}
-        onPress={() => Haptic.impact(Medium)}
+        onPress={() => Haptics.impactAsync(Medium)}
         text="Medium"
       />
 
       <TouchButton
         btnStyle={[gStyle.btnPrimary, { alignSelf: 'center' }]}
         btnTextStyle={gStyle.btnPrimaryText}
-        onPress={() => Haptic.impact(Heavy)}
+        onPress={() => Haptics.impactAsync(Heavy)}
         text="Heavy"
       />
 

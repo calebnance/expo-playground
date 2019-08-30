@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, Slider, StyleSheet, Text, View } from 'react-native';
-import { Brightness } from 'expo';
+import * as Brightness from 'expo-brightness';
 import { colors, device, gStyle } from '../../constants';
 
 // components

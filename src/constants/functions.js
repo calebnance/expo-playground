@@ -1,5 +1,6 @@
 import { CameraRoll, Image } from 'react-native';
-import { Asset, Font, Permissions } from 'expo';
+import { Font, Permissions } from 'expo';
+import { Asset } from 'expo-asset';
 
 import preloadImages from './preloadImages';
 
@@ -10,9 +11,7 @@ const cacheFonts = fonts => fonts.map(font => Font.loadAsync(font));
 // cache images
 // /////////////////////////////////////////////////////////////////////////////
 const cacheImages = images => {
-  const imagesArray = Object.values(images);
-
-  return imagesArray.map(image => {
+  return Object.values(images).map(image => {
     if (typeof image === 'string') {
       return Image.prefetch(image);
     }

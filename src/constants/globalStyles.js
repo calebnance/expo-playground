@@ -40,11 +40,6 @@ export default {
   btnPrimaryText: {
     color: colors.white
   },
-  navHeaderStyle: {
-    // this was added for older android OS
-    // can't replicate consistently right now
-    // marginTop: device.iOS ? 0 : -device.statusBarHeight
-  },
   navHeaderRightIconStyle: {
     borderWidth: 0,
     paddingLeft: 0,

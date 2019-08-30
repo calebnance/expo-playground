@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { createStackNavigator } from 'react-navigation';
-import { gStyle } from '../constants';
 
 import navigationOptions from './defaultNavOptions';
 
@@ -32,8 +31,7 @@ export default createStackNavigator(
     ApisMain: {
       screen: ApisScreen,
       navigationOptions: {
-        title: 'APIs',
-        headerStyle: gStyle.navHeaderStyle
+        title: 'APIs'
       }
     },
     ApisAlert: {
