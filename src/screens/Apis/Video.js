@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Haptic, Video } from 'expo';
+import * as Haptics from 'expo-haptics';
+import { Video } from 'expo-av';
 import { colors, device, fonts, func, gStyle } from '../../constants';
 
 // components
@@ -13,7 +14,7 @@ import SvgPause from '../../components/icons/Svg.Pause';
 import SvgPlay from '../../components/icons/Svg.Play';
 import SvgStop from '../../components/icons/Svg.Stop';
 
-const { Medium } = Haptic.ImpactFeedbackStyle;
+const { Medium } = Haptics.ImpactFeedbackStyle;
 
 const recordPlayerClose = require('../../assets/videos/recordplayer-576.mp4');
 
@@ -178,7 +179,7 @@ class VideoScreen extends React.Component {
             icon={<SvgPause />}
             iconColor={isPaused ? colors.white : colors.brandPrimary}
             onPress={() => {
-              if (device.iOS) Haptic.impact(Medium);
+              if (device.iOS) Haptics.impactAsync(Medium);
 
               this.video.pauseAsync();
               this.setState({ status: 'Paused' });
@@ -192,7 +193,7 @@ class VideoScreen extends React.Component {
             icon={<SvgStop />}
             iconColor={isStopped ? colors.white : colors.brandPrimary}
             onPress={() => {
-              if (device.iOS) Haptic.impact(Medium);
+              if (device.iOS) Haptics.impactAsync(Medium);
 
               this.video.stopAsync();
               this.setState({ status: 'Stopped' });
@@ -206,7 +207,7 @@ class VideoScreen extends React.Component {
             icon={<SvgPlay />}
             iconColor={isPlaying ? colors.white : colors.brandPrimary}
             onPress={() => {
-              if (device.iOS) Haptic.impact(Medium);
+              if (device.iOS) Haptics.impactAsync(Medium);
 
               this.video.playAsync();
               this.setState({ status: 'Playing' });
@@ -220,7 +221,7 @@ class VideoScreen extends React.Component {
             icon={<SvgLoop />}
             iconColor={looping ? colors.white : colors.brandPrimary}
             onPress={() => {
-              if (device.iOS) Haptic.impact(Medium);
+              if (device.iOS) Haptics.impactAsync(Medium);
 
               this.setState(prevState => ({
                 looping: !prevState.looping,
@@ -234,7 +235,7 @@ class VideoScreen extends React.Component {
           <TouchIcon
             icon={<SvgFullscreen />}
             onPress={() => {
-              if (device.iOS) Haptic.impact(Medium);
+              if (device.iOS) Haptics.impactAsync(Medium);
 
               this.video.presentFullscreenPlayer();
             }}

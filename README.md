@@ -40,6 +40,8 @@ OTA Update: `expo publish`
 
 ### version 0.0.1 (current)
 
+- Updated to latest [Expo SDK 34](https://blog.expo.io/expo-sdk-34-is-now-available-4f7825239319)
+- Updated to latest [Expo SDK 33](https://blog.expo.io/expo-sdk-v33-0-0-is-now-available-52d1c99dfe4c)
 - Examples of:
   - [Alert](https://facebook.github.io/react-native/docs/alert)
   - [Brightness](https://docs.expo.io/versions/latest/sdk/brightness/)
