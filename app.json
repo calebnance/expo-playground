@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Expo Playground",
-    "description": "an expo playground... examples of what apis are available",
+    "description": "react native / expo api playground",
     "scheme": "expoplayground",
     "slug": "expoplayground",
     "privacy": "public",
