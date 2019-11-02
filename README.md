@@ -40,7 +40,7 @@ OTA Update: `expo publish`
 
 ### version 0.0.1 (current)
 
-- upgraded to [Expo SDK 35](https://blog.expo.io/expo-sdk-35-is-now-available-beee0dfafbf4)
+- Updated to latest [Expo SDK 35](https://blog.expo.io/expo-sdk-35-is-now-available-beee0dfafbf4)
 - With web build, use of [Platform Specific Code](https://facebook.github.io/react-native/docs/platform-specific-code)
 - Updated to latest [Expo SDK 34](https://blog.expo.io/expo-sdk-34-is-now-available-4f7825239319)
 - Updated to latest [Expo SDK 33](https://blog.expo.io/expo-sdk-v33-0-0-is-now-available-52d1c99dfe4c)
