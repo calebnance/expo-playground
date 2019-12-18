@@ -7,6 +7,7 @@
 ## Table of Contents
 
 - [Install & Build](#install--build)
+- [Stats](#stats)
 - [Linting](#linting)
 - [Release Notes](#release-notes)
 
@@ -18,15 +19,12 @@ Install: `yarn` or `yarn install`
 
 Run Project Locally: `expo start` or `yarn dev`
 
-### and publishing to the app store (TestFlight)
+## Stats
 
-- iOS Build: `expo build:ios` (this builds the app binaries)
-- download *.ipa* file once available
-- open **xCode** -> **open developer tool** -> **application loader**
-  - make sure you create a password specifically for this app; [appleid](https://appleid.apple.com)
-- check on status of submission: [apple connect](https://appstoreconnect.apple.com)
-
-OTA Update: `expo publish`
+- Expo SDK 36
+- iOS, Android and PWA (Web App)
+- React Navigation v3
+- PropTypes
 
 ## Linting
 
@@ -45,10 +43,11 @@ OTA Update: `expo publish`
 
 ### version 0.0.1 (current)
 
-- Updated to latest [Expo SDK 35](https://blog.expo.io/expo-sdk-35-is-now-available-beee0dfafbf4)
+- upgraded to [Expo SDK 36](https://blog.expo.io/expo-sdk-36-is-now-available-b91897b437fe)
+- upgraded to [Expo SDK 35](https://blog.expo.io/expo-sdk-35-is-now-available-beee0dfafbf4)
 - With web build, use of [Platform Specific Code](https://facebook.github.io/react-native/docs/platform-specific-code)
-- Updated to latest [Expo SDK 34](https://blog.expo.io/expo-sdk-34-is-now-available-4f7825239319)
-- Updated to latest [Expo SDK 33](https://blog.expo.io/expo-sdk-v33-0-0-is-now-available-52d1c99dfe4c)
+- upgraded to [Expo SDK 34](https://blog.expo.io/expo-sdk-34-is-now-available-4f7825239319)
+- upgraded to [Expo SDK 33](https://blog.expo.io/expo-sdk-v33-0-0-is-now-available-52d1c99dfe4c)
 - Examples of:
   - [Alert](https://facebook.github.io/react-native/docs/alert)
   - [Brightness](https://docs.expo.io/versions/latest/sdk/brightness/)
@@ -75,4 +74,4 @@ OTA Update: `expo publish`
     - Device Name
     - Device Year
     - Device Dimensions
-- Updated to latest [Expo SDK 32](https://blog.expo.io/expo-sdk-v32-0-0-is-now-available-6b78f92a6c52)
+- upgraded to [Expo SDK 32](https://blog.expo.io/expo-sdk-v32-0-0-is-now-available-6b78f92a6c52)
