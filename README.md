@@ -43,6 +43,7 @@ Run Project Locally: `expo start` or `yarn dev`
 
 ### version 0.0.1 (current)
 
+- upgraded to [Expo SDK 37](https://blog.expo.io/expo-sdk-37-is-now-available-dd5770f066a6)
 - upgraded to [Expo SDK 36](https://blog.expo.io/expo-sdk-36-is-now-available-b91897b437fe)
 - upgraded to [Expo SDK 35](https://blog.expo.io/expo-sdk-35-is-now-available-beee0dfafbf4)
 - With web build, use of [Platform Specific Code](https://facebook.github.io/react-native/docs/platform-specific-code)
