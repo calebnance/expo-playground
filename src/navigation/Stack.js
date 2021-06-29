@@ -1,30 +1,24 @@
-import { createAppContainer, createStackNavigator } from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
 // navigation stack
 import TabNavigator from './TabNavigator';
-
-// modal routes (dynamic transitions)
-import ModalRoutes from './ModalRoutes';
 
 // screens
 import ModalVideo from '../screens/ModalVideo';
 
 const StackNavigator = createStackNavigator(
   {
-    TabMain: {
-      screen: TabNavigator
-    },
+    TabNavigator,
 
     // Modals
     // /////////////////////////////////////////////////////////////////////////
-    ModalVideo: {
-      screen: ModalVideo
-    }
+    ModalVideo
   },
   {
     headerMode: 'none',
-    initialRouteName: 'TabMain',
-    transitionConfig: ModalRoutes
+    initialRouteName: 'TabNavigator',
+    mode: 'modal'
   }
 );
 

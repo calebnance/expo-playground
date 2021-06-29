@@ -9,7 +9,7 @@ import TouchIcon from '../components/TouchIcon';
 import SvgOpenBook from '../components/icons/Svg.OpenBook';
 
 export default ({ navigation }) => ({
-  headerRight: (
+  headerRight: () => (
     <TouchIcon
       icon={<SvgOpenBook />}
       onPress={() =>
