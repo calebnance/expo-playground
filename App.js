@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
-import { AppLoading } from 'expo';
+import AppLoading from 'expo-app-loading';
 import { device, func } from './src/constants';
 
 import Stack from './src/navigation/Stack';
@@ -22,6 +22,9 @@ export default class App extends React.Component {
     if (isLoading) {
       return (
         <AppLoading
+          onError={() => {
+            // console.warn
+          }}
           onFinish={() => this.setState({ isLoading: false })}
           startAsync={func.loadAssetsAsync}
         />
