@@ -86,6 +86,9 @@ export default {
     height: 240,
     width: '100%'
   },
+  mB4: {
+    marginBottom: 4
+  },
   mB8: {
     marginBottom: 8
   },

@@ -17,8 +17,8 @@ import SvgMapPin from '../../components/icons/Svg.MapPin';
 const locationsArray = Object.values(locations);
 
 class MapViewScreen extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       lat: parseFloat(locationsArray[0].lat),
@@ -57,11 +57,7 @@ class MapViewScreen extends React.Component {
         <View style={gStyle.spacer24} />
 
         <MapView
-          style={{
-            alignSelf: 'center',
-            height: 240,
-            width: device.width - 32
-          }}
+          style={styles.map}
           provider={mapProvider}
           region={{
             latitude: lat,
@@ -76,7 +72,7 @@ class MapViewScreen extends React.Component {
             bounces={false}
             data={locationsArray}
             extraData={this.state}
-            keyExtractor={item => item.id.toString()}
+            keyExtractor={(item) => item.id.toString()}
             renderItem={({ item }) => {
               const activeLocation = item.name === location;
               const color = activeLocation
@@ -111,17 +107,23 @@ class MapViewScreen extends React.Component {
     />
   </View>
 )}
+
+lineItem: {
+  alignItems: 'center',
+  flexDirection: 'row',
+  height: 48,
+  justifyContent: 'space-between',
+  marginBottom: 16,
+  paddingHorizontal: 16,
+  width: '100%'
+},
 */
 
 const styles = StyleSheet.create({
-  lineItem: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    height: 48,
-    marginBottom: 16,
-    paddingHorizontal: 16,
-    width: '100%'
+  map: {
+    alignSelf: 'center',
+    height: 240,
+    width: device.width - 32
   },
   containerLocation: {
     alignItems: 'center',

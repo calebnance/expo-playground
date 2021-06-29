@@ -18,8 +18,8 @@ import SvgSave from '../../components/icons/Svg.Save';
 const { Medium } = Haptics.ImpactFeedbackStyle;
 
 class ImageManipulatorScreen extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       image: null,
@@ -91,16 +91,11 @@ class ImageManipulatorScreen extends React.Component {
   render() {
     const { image, imageHeight } = this.state;
 
+    const imageExt = { height: imageHeight };
+
     return (
       <View style={gStyle.container}>
-        <Image
-          source={image}
-          style={{
-            height: imageHeight,
-            resizeMode: 'contain',
-            width: device.width
-          }}
-        />
+        <Image source={image} style={[styles.image, imageExt]} />
 
         <View style={gStyle.pH16}>
           <View style={[gStyle.flexRowSpace, gStyle.p16]}>
@@ -134,13 +129,13 @@ class ImageManipulatorScreen extends React.Component {
         <View style={gStyle.spacer24} />
 
         <TouchButton
-          btnStyle={[gStyle.btnPrimary, { alignSelf: 'center' }]}
+          btnStyle={[gStyle.btnPrimary, styles.btnExt]}
           btnTextStyle={gStyle.btnPrimaryText}
-          onPress={() =>
+          onPress={() => {
             WebBrowser.openBrowserAsync(
               'https://unsplash.com/photos/dZOFaMG-0Q0'
-            )
-          }
+            );
+          }}
           text="Photo Credit"
         />
       </View>
@@ -149,6 +144,10 @@ class ImageManipulatorScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  image: {
+    resizeMode: 'contain',
+    width: device.width
+  },
   containerLabel: {
     alignItems: 'center',
     width: 58
@@ -157,6 +156,9 @@ const styles = StyleSheet.create({
     color: colors.brandPrimary,
     marginTop: 8,
     textAlign: 'center'
+  },
+  btnExt: {
+    alignSelf: 'center'
   }
 });
 

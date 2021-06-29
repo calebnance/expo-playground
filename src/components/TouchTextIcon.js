@@ -50,9 +50,9 @@ const styles = StyleSheet.create({
     borderBottomColor: colors.lightGrey,
     borderBottomWidth: StyleSheet.hairlineWidth,
     flexDirection: 'row',
+    justifyContent: 'space-between',
     paddingHorizontal: 16,
     paddingVertical: 16,
-    justifyContent: 'space-between',
     width: '100%'
   },
   containerText: {

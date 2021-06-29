@@ -1,7 +1,7 @@
 import React from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import * as Haptics from 'expo-haptics';
-import { fonts, gStyle } from '../../constants';
+import { gStyle } from '../../constants';
 
 // components
 import TouchButton from '../../components/TouchButton';
@@ -26,7 +26,7 @@ const HapticScreen = () => (
       </View>
 
       <TouchButton
-        btnStyle={[gStyle.btnPrimary, { alignSelf: 'center' }]}
+        btnStyle={[gStyle.btnPrimary, styles.btnExt]}
         btnTextStyle={gStyle.btnPrimaryText}
         onPress={() => Haptics.selectionAsync()}
         text="Simple"
@@ -37,21 +37,21 @@ const HapticScreen = () => (
       </View>
 
       <TouchButton
-        btnStyle={[gStyle.btnPrimary, { alignSelf: 'center' }]}
+        btnStyle={[gStyle.btnPrimary, styles.btnExt]}
         btnTextStyle={gStyle.btnPrimaryText}
         onPress={() => Haptics.impactAsync(Light)}
         text="Light"
       />
 
       <TouchButton
-        btnStyle={[gStyle.btnPrimary, { alignSelf: 'center' }]}
+        btnStyle={[gStyle.btnPrimary, styles.btnExt]}
         btnTextStyle={gStyle.btnPrimaryText}
         onPress={() => Haptics.impactAsync(Medium)}
         text="Medium"
       />
 
       <TouchButton
-        btnStyle={[gStyle.btnPrimary, { alignSelf: 'center' }]}
+        btnStyle={[gStyle.btnPrimary, styles.btnExt]}
         btnTextStyle={gStyle.btnPrimaryText}
         onPress={() => Haptics.impactAsync(Heavy)}
         text="Heavy"
@@ -59,21 +59,19 @@ const HapticScreen = () => (
 
       <View style={gStyle.spacer24} />
 
-      <Text
-        style={[gStyle.paragraph, { fontFamily: fonts.bold, marginBottom: 8 }]}
-      >
+      <Text style={[gStyle.paragraphBold, gStyle.mB8]}>
         The Taptic engine will do nothing given the following circumstances:
       </Text>
-      <Text style={[gStyle.paragraph, { marginBottom: 4 }]}>
+      <Text style={[gStyle.paragraph, gStyle.mB4]}>
         - Low Power Mode is enabled
       </Text>
-      <Text style={[gStyle.paragraph, { marginBottom: 4 }]}>
+      <Text style={[gStyle.paragraph, gStyle.mB4]}>
         - User disabled the Taptic Engine in settings
       </Text>
-      <Text style={[gStyle.paragraph, { marginBottom: 4 }]}>
+      <Text style={[gStyle.paragraph, gStyle.mB4]}>
         - Haptic engine generation is to low (less than 2nd gen) - Private API
       </Text>
-      <Text style={[gStyle.paragraph, { marginBottom: 4 }]}>
+      <Text style={[gStyle.paragraph, gStyle.mB4]}>
         - iOS version is less than 10 (iPhone 7 is the first phone to support
         this)
       </Text>
@@ -82,5 +80,11 @@ const HapticScreen = () => (
     </View>
   </ScrollView>
 );
+
+const styles = StyleSheet.create({
+  btnExt: {
+    alignSelf: 'center'
+  }
+});
 
 export default HapticScreen;

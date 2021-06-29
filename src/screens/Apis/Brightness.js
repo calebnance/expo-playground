@@ -7,8 +7,8 @@ import { colors, device, gStyle } from '../../constants';
 import TouchButton from '../../components/TouchButton';
 
 class BrightnessScreen extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       current: null,
@@ -119,7 +119,7 @@ class BrightnessScreen extends React.Component {
           <Slider
             maximumValue={1}
             minimumTrackTintColor={colors.brandPrimary}
-            onValueChange={value => this.setBrightness(value)}
+            onValueChange={(value) => this.setBrightness(value)}
             step={0.01}
             style={styles.slider}
             value={current}

@@ -12,11 +12,11 @@ export default ({ navigation }) => ({
   headerRight: () => (
     <TouchIcon
       icon={<SvgOpenBook />}
-      onPress={() =>
+      onPress={() => {
         WebBrowser.openBrowserAsync(
           navigation.getParam('url', 'https://expo.io')
-        )
-      }
+        );
+      }}
       style={gStyle.navHeaderRightIconStyle}
     />
   ),

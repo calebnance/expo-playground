@@ -7,12 +7,12 @@ import preloadImages from './preloadImages';
 
 // cache fonts
 // /////////////////////////////////////////////////////////////////////////////
-const cacheFonts = fonts => fonts.map(font => Font.loadAsync(font));
+const cacheFonts = (fonts) => fonts.map((font) => Font.loadAsync(font));
 
 // cache images
 // /////////////////////////////////////////////////////////////////////////////
-const cacheImages = images => {
-  return Object.values(images).map(image => {
+const cacheImages = (images) => {
+  return Object.values(images).map((image) => {
     if (typeof image === 'string') {
       return Image.prefetch(image);
     }
@@ -69,7 +69,7 @@ const cameraRollAccessAsync = async () => {
 
 // save to camera roll
 // /////////////////////////////////////////////////////////////////////////////
-const saveToCameraRollAsync = async image => {
+const saveToCameraRollAsync = async (image) => {
   const saveResult = await CameraRoll.saveToCameraRoll(image, 'photo');
 
   return saveResult;
@@ -77,7 +77,7 @@ const saveToCameraRollAsync = async image => {
 
 // format milliseconds
 // /////////////////////////////////////////////////////////////////////////////
-const formatTime = milliseconds => {
+const formatTime = (milliseconds) => {
   const secondsNum = parseInt(milliseconds / 1000, 10);
   let hours = Math.floor(secondsNum / 3600);
   let minutes = Math.floor((secondsNum - hours * 3600) / 60);

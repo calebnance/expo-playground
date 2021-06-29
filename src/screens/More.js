@@ -9,21 +9,21 @@ import TouchTextIcon from '../components/TouchTextIcon';
 const More = ({ navigation }) => (
   <View style={gStyle.container}>
     <TouchTextIcon
-      onPress={() =>
+      onPress={() => {
         navigation.navigate('MoreBuild', {
           title: 'Build',
           url: 'https://docs.expo.io/versions/latest/sdk/constants'
-        })
-      }
+        });
+      }}
       text="Build Information"
     />
     <TouchTextIcon
-      onPress={() =>
+      onPress={() => {
         navigation.navigate('MoreDevice', {
           title: 'Device',
           url: 'https://docs.expo.io/versions/latest/sdk/constants'
-        })
-      }
+        });
+      }}
       text="Device Information"
     />
   </View>

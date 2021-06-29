@@ -82,21 +82,21 @@ const LinkingScreen = () => (
         <TouchButton
           btnStyle={gStyle.btnPrimary}
           btnTextStyle={gStyle.btnPrimaryText}
-          onPress={() =>
+          onPress={() => {
             Linking.openURL(
               'https://ios.gadgethacks.com/news/always-updated-list-ios-app-url-scheme-names-0184033/'
-            )
-          }
+            );
+          }}
           text="Popular App Schemes"
         />
         <TouchButton
           btnStyle={gStyle.btnPrimary}
           btnTextStyle={gStyle.btnPrimaryText}
-          onPress={() =>
+          onPress={() => {
             Linking.openURL(
               'https://docs.expo.io/versions/latest/workflow/linking#opening-links-to-other-apps'
-            )
-          }
+            );
+          }}
           text="Use of canOpenURL()"
         />
       </View>

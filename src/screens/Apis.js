@@ -17,7 +17,7 @@ const Apis = ({ navigation }) => {
     <View style={gStyle.container}>
       <FlatList
         data={dataArray}
-        keyExtractor={item => item.id.toString()}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => {
           let textMuted = null;
 
@@ -39,12 +39,12 @@ const Apis = ({ navigation }) => {
 
           return (
             <TouchTextIcon
-              onPress={() =>
+              onPress={() => {
                 navigation.navigate(item.route, {
                   title: item.title,
                   url: item.url
-                })
-              }
+                });
+              }}
               text={item.title}
               textMuted={textMuted}
             />

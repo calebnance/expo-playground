@@ -19,8 +19,8 @@ const { Medium } = Haptics.ImpactFeedbackStyle;
 const recordPlayerClose = require('../../assets/videos/recordplayer-576.mp4');
 
 class VideoScreen extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.video = null;
 
@@ -124,15 +124,8 @@ class VideoScreen extends React.Component {
   }
 
   render() {
-    const {
-      callback,
-      current,
-      duration,
-      looping,
-      status,
-      videoH,
-      videoW
-    } = this.state;
+    const { callback, current, duration, looping, status, videoH, videoW } =
+      this.state;
 
     const isPlaying = status === 'Playing';
     const isStopped = status === 'Stopped';
@@ -143,11 +136,11 @@ class VideoScreen extends React.Component {
         <Video
           isLooping={looping}
           isMuted
-          onFullscreenUpdate={data => this.handleFullscreenUpdate(data)}
-          onPlaybackStatusUpdate={data => this.handlePlaybackUpdate(data)}
+          onFullscreenUpdate={(data) => this.handleFullscreenUpdate(data)}
+          onPlaybackStatusUpdate={(data) => this.handlePlaybackUpdate(data)}
           progressUpdateIntervalMillis={1000}
           rate={1.0}
-          ref={ref => {
+          ref={(ref) => {
             this.video = ref;
           }}
           resizeMode="cover"
@@ -223,7 +216,7 @@ class VideoScreen extends React.Component {
             onPress={() => {
               if (device.iOS) Haptics.impactAsync(Medium);
 
-              this.setState(prevState => ({
+              this.setState((prevState) => ({
                 looping: !prevState.looping,
                 status: 'Playing'
               }));

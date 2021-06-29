@@ -11,8 +11,8 @@ import {
 import { colors, fonts, gStyle } from '../../constants';
 
 class KeyboardScreen extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       dKey: '',
@@ -46,7 +46,7 @@ class KeyboardScreen extends React.Component {
             <Text style={styles.label}>Light Keyboard</Text>
             <TextInput
               keyboardAppearance="light"
-              onChangeText={input => this.setState({ lKey: input })}
+              onChangeText={(input) => this.setState({ lKey: input })}
               placeholder="tap here"
               placeholderTextColor={colors.grey}
               selectionColor={colors.brandPrimary}
@@ -57,7 +57,7 @@ class KeyboardScreen extends React.Component {
             <Text style={styles.label}>Dark Keyboard</Text>
             <TextInput
               keyboardAppearance="dark"
-              onChangeText={input => this.setState({ dKey: input })}
+              onChangeText={(input) => this.setState({ dKey: input })}
               placeholder="tap here"
               placeholderTextColor={colors.grey}
               selectionColor={colors.brandPrimary}
@@ -71,7 +71,7 @@ class KeyboardScreen extends React.Component {
 
             <Text style={styles.label}>Number Pad</Text>
             <TextInput
-              onChangeText={input => this.setState({ text: input })}
+              onChangeText={(input) => this.setState({ text: input })}
               keyboardType="number-pad"
               placeholder="tap here"
               placeholderTextColor={colors.grey}
@@ -82,7 +82,7 @@ class KeyboardScreen extends React.Component {
 
             <Text style={styles.label}>Phone Pad</Text>
             <TextInput
-              onChangeText={input => this.setState({ text: input })}
+              onChangeText={(input) => this.setState({ text: input })}
               keyboardType="phone-pad"
               placeholder="tap here"
               placeholderTextColor={colors.grey}
@@ -93,7 +93,7 @@ class KeyboardScreen extends React.Component {
 
             <Text style={styles.label}>E-mail Address</Text>
             <TextInput
-              onChangeText={input => this.setState({ text: input })}
+              onChangeText={(input) => this.setState({ text: input })}
               keyboardType="email-address"
               placeholder="tap here"
               placeholderTextColor={colors.grey}
