@@ -6,10 +6,8 @@ import { gStyle } from '../../constants';
 // components
 import TouchButton from '../../components/TouchButton';
 
-// broken on SDK 32, waiting for fix
-// https://github.com/expo/expo/issues/3224
-// const { Success, Warning, Error } = Haptic.NotificationFeedbackType;
-
+// haptics
+const { Success, Warning, Error } = Haptics.NotificationFeedbackType;
 const { Light, Medium, Heavy } = Haptics.ImpactFeedbackStyle;
 
 const HapticScreen = () => (
@@ -30,6 +28,31 @@ const HapticScreen = () => (
         btnTextStyle={gStyle.btnPrimaryText}
         onPress={() => Haptics.selectionAsync()}
         text="Simple"
+      />
+
+      <View style={gStyle.sectionHeading}>
+        <Text style={gStyle.sectionHeadingText}>Haptic Notification</Text>
+      </View>
+
+      <TouchButton
+        btnStyle={[gStyle.btnPrimary, styles.btnExt]}
+        btnTextStyle={gStyle.btnPrimaryText}
+        onPress={() => Haptics.notificationAsync(Success)}
+        text="Success"
+      />
+
+      <TouchButton
+        btnStyle={[gStyle.btnPrimary, styles.btnExt]}
+        btnTextStyle={gStyle.btnPrimaryText}
+        onPress={() => Haptics.notificationAsync(Warning)}
+        text="Warning"
+      />
+
+      <TouchButton
+        btnStyle={[gStyle.btnPrimary, styles.btnExt]}
+        btnTextStyle={gStyle.btnPrimaryText}
+        onPress={() => Haptics.notificationAsync(Error)}
+        text="Error"
       />
 
       <View style={gStyle.sectionHeading}>
