@@ -33,6 +33,7 @@
     "expo-haptics": "~10.0.0",
     "expo-image-manipulator": "~9.1.0",
     "expo-media-library": "^12.0.2",
+    "expo-speech": "^9.1.0",
     "expo-web-browser": "~9.1.0",
     "prop-types": "^15.7.2",
     "react": "16.13.1",

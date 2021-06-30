@@ -4707,6 +4707,11 @@ expo-media-library@^12.0.2:
     "@expo/config-plugins" "^1.0.18"
     unimodules-permissions-interface "~6.1.0"
 
+expo-speech@^9.1.0:
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/expo-speech/-/expo-speech-9.1.0.tgz#623ecd97211d6ad6ecefcaa8033895dd207be636"
+  integrity sha512-5yIMVo1auAwClVnlJnCRyJqKS82IeQXzTCamP4iP4LmHDR5+9sae/D/mD5mX7KV3brWf3n0sEyFhuU7WqgMQvg==
+
 expo-splash-screen@~0.10.2:
   version "0.10.2"
   resolved "https://registry.yarnpkg.com/expo-splash-screen/-/expo-splash-screen-0.10.2.tgz#3e3d7c24c4ed180a60ce3ec64a77eefd04dd0d97"
