@@ -1,7 +1,7 @@
-import { CameraRoll, Image } from 'react-native';
+import { Image } from 'react-native';
 import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
-import * as Permissions from 'expo-permissions';
+import * as MediaLibrary from 'expo-media-library';
 
 import preloadImages from './preloadImages';
 
@@ -35,32 +35,12 @@ const loadAssetsAsync = async () => {
 // /////////////////////////////////////////////////////////////////////////////
 const cameraAccessAsync = async () => {
   // get exisiting camera permissions first
-  const { status: existingStatus } = await Permissions.getAsync(
-    Permissions.CAMERA
-  );
+  const { status: existingStatus } = await MediaLibrary.getPermissionsAsync();
   let finalStatus = existingStatus;
 
   // ask again to grant camera permissions (if not already allowed)
   if (existingStatus !== 'granted') {
-    const { status } = await Permissions.askAsync(Permissions.CAMERA);
-    finalStatus = status;
-  }
-
-  return finalStatus === 'granted';
-};
-
-// camera roll permissions
-// /////////////////////////////////////////////////////////////////////////////
-const cameraRollAccessAsync = async () => {
-  // get exisiting camera permissions first
-  const { status: existingStatus } = await Permissions.getAsync(
-    Permissions.CAMERA_ROLL
-  );
-  let finalStatus = existingStatus;
-
-  // ask again to grant camera permissions (if not already allowed)
-  if (existingStatus !== 'granted') {
-    const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+    const { status } = await MediaLibrary.requestPermissionsAsync();
     finalStatus = status;
   }
 
@@ -69,8 +49,8 @@ const cameraRollAccessAsync = async () => {
 
 // save to camera roll
 // /////////////////////////////////////////////////////////////////////////////
-const saveToCameraRollAsync = async (image) => {
-  const saveResult = await CameraRoll.saveToCameraRoll(image, 'photo');
+const saveToCameraRollAsync = async (localUri) => {
+  const saveResult = await MediaLibrary.saveToLibraryAsync(localUri);
 
   return saveResult;
 };
@@ -96,7 +76,6 @@ export default {
   cacheImages,
   loadAssetsAsync,
   cameraAccessAsync,
-  cameraRollAccessAsync,
   saveToCameraRollAsync,
   formatTime
 };

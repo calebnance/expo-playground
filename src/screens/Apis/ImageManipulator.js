@@ -64,13 +64,13 @@ class ImageManipulatorScreen extends React.Component {
   async save() {
     const { image } = this.state;
 
-    const accessCameraRoll = await func.cameraRollAccessAsync();
+    const accessCameraRoll = await func.cameraAccessAsync();
 
     // on iOS device, use Haptic feedback
     if (device.iOS) Haptics.impactAsync(Medium);
 
     if (accessCameraRoll) {
-      await func.saveToCameraRollAsync(image.uri);
+      await func.saveToCameraRollAsync(image.localUri);
 
       Alert.alert(
         'Image Saved!',
