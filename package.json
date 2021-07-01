@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",
+    "@react-native-segmented-control/segmented-control": "2.3.0",
     "expo": "^41.0.0",
     "expo-app-loading": "^1.0.3",
     "expo-asset": "~8.3.1",

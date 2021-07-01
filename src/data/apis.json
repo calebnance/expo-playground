@@ -43,20 +43,26 @@
       "title": "Map View",
       "url": "https://docs.expo.io/versions/latest/sdk/map-view/"
     },
-    "speech": {
+    "segmentedcontrol": {
       "id": 8,
+      "route": "ApisSegmentedControl",
+      "title": "Segmented Control",
+      "url": "https://github.com/react-native-segmented-control/segmented-control#react-native-segmented-controlsegmented-control"
+    },
+    "speech": {
+      "id": 9,
       "route": "ApisSpeech",
       "title": "Speech",
       "url": "https://docs.expo.io/versions/latest/sdk/speech/"
     },
     "vibration": {
-      "id": 9,
+      "id": 10,
       "route": "ApisVibration",
       "title": "Vibration",
       "url": "https://facebook.github.io/react-native/docs/vibration"
     },
-    "Video": {
-      "id": 10,
+    "video": {
+      "id": 11,
       "route": "ApisVideo",
       "title": "Video",
       "url": "https://docs.expo.io/versions/latest/sdk/video/"
