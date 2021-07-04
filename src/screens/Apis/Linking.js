@@ -6,10 +6,10 @@ import { gStyle } from '../../constants';
 import TouchButton from '../../components/TouchButton';
 
 const LinkingScreen = () => (
-  <ScrollView style={gStyle.container}>
-    <View style={gStyle.spacer24} />
+  <ScrollView style={gStyle.containerBg}>
+    <View style={gStyle.spacer3} />
 
-    <View style={gStyle.pH16}>
+    <View style={gStyle.pH2}>
       <Text style={gStyle.paragraph}>
         Linking is the ability to link to system apps or other 3rd party apps,
         or even websites (with the ability to also pass data to websites).
@@ -101,7 +101,7 @@ const LinkingScreen = () => (
         />
       </View>
     </View>
-    <View style={gStyle.spacer24} />
+    <View style={gStyle.spacer3} />
   </ScrollView>
 );
 

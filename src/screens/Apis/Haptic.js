@@ -11,10 +11,10 @@ const { Success, Warning, Error } = Haptics.NotificationFeedbackType;
 const { Light, Medium, Heavy } = Haptics.ImpactFeedbackStyle;
 
 const HapticScreen = () => (
-  <ScrollView style={gStyle.container}>
-    <View style={gStyle.spacer24} />
+  <ScrollView style={gStyle.containerBg}>
+    <View style={gStyle.spacer2} />
 
-    <View style={gStyle.pH16}>
+    <View style={gStyle.pH2}>
       <Text style={gStyle.paragraph}>
         Provides haptic feedback for iOS 10+ devices using the Taptic Engine.
       </Text>
@@ -80,26 +80,26 @@ const HapticScreen = () => (
         text="Heavy"
       />
 
-      <View style={gStyle.spacer24} />
+      <View style={gStyle.spacer2} />
 
-      <Text style={[gStyle.paragraphBold, gStyle.mB8]}>
+      <Text style={[gStyle.paragraphBold, gStyle.mB1]}>
         The Taptic engine will do nothing given the following circumstances:
       </Text>
-      <Text style={[gStyle.paragraph, gStyle.mB4]}>
+      <Text style={[gStyle.paragraph, gStyle.mB1]}>
         - Low Power Mode is enabled
       </Text>
-      <Text style={[gStyle.paragraph, gStyle.mB4]}>
+      <Text style={[gStyle.paragraph, gStyle.mB1]}>
         - User disabled the Taptic Engine in settings
       </Text>
-      <Text style={[gStyle.paragraph, gStyle.mB4]}>
+      <Text style={[gStyle.paragraph, gStyle.mB1]}>
         - Haptic engine generation is to low (less than 2nd gen) - Private API
       </Text>
-      <Text style={[gStyle.paragraph, gStyle.mB4]}>
+      <Text style={[gStyle.paragraph, gStyle.mB1]}>
         - iOS version is less than 10 (iPhone 7 is the first phone to support
         this)
       </Text>
 
-      <View style={gStyle.spacer24} />
+      <View style={gStyle.spacer3} />
     </View>
   </ScrollView>
 );

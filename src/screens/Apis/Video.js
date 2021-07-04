@@ -132,7 +132,7 @@ class VideoScreen extends React.Component {
     const isPaused = status === 'Paused';
 
     return (
-      <View style={gStyle.container}>
+      <View style={gStyle.containerBg}>
         <Video
           isLooping={looping}
           isMuted
@@ -167,7 +167,7 @@ class VideoScreen extends React.Component {
           </View>
         </View>
 
-        <View style={[gStyle.flexRowSpace, gStyle.p16]}>
+        <View style={[gStyle.flexRowSpace, gStyle.p2]}>
           <TouchIcon
             icon={<SvgPause />}
             iconColor={isPaused ? colors.white : colors.brandPrimary}

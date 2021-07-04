@@ -60,8 +60,8 @@ class VibrationScreen extends React.Component {
     const renderNotes = device.iOS ? appleNotes : androidNotes;
 
     return (
-      <View style={gStyle.container}>
-        <View style={gStyle.spacer24} />
+      <View style={gStyle.containerBg}>
+        <View style={gStyle.spacer3} />
 
         <View style={gStyle.centerItems}>
           <TouchButton
@@ -77,7 +77,7 @@ class VibrationScreen extends React.Component {
             text="Vibrate x 2"
           />
 
-          <View style={gStyle.spacer24} />
+          <View style={gStyle.spacer3} />
 
           <Text style={gStyle.paragraph}>
             {`Since you are on an ${os} device...`}

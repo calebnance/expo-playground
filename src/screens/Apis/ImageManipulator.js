@@ -94,11 +94,11 @@ class ImageManipulatorScreen extends React.Component {
     const imageExt = { height: imageHeight };
 
     return (
-      <View style={gStyle.container}>
+      <View style={gStyle.containerBg}>
         <Image source={image} style={[styles.image, imageExt]} />
 
-        <View style={gStyle.pH16}>
-          <View style={[gStyle.flexRowSpace, gStyle.p16]}>
+        <View style={gStyle.pH2}>
+          <View style={[gStyle.flexRowSpace, gStyle.p2]}>
             <View style={styles.containerLabel}>
               <TouchIcon
                 icon={<SvgRotateLeft />}
@@ -107,6 +107,7 @@ class ImageManipulatorScreen extends React.Component {
               />
               <Text style={styles.label}>Rotate Left</Text>
             </View>
+
             <View style={styles.containerLabel}>
               <TouchIcon
                 icon={<SvgSave />}
@@ -115,6 +116,7 @@ class ImageManipulatorScreen extends React.Component {
               />
               <Text style={styles.label}>Save Image</Text>
             </View>
+
             <View style={styles.containerLabel}>
               <TouchIcon
                 icon={<SvgRotateRight />}
@@ -126,7 +128,7 @@ class ImageManipulatorScreen extends React.Component {
           </View>
         </View>
 
-        <View style={gStyle.spacer24} />
+        <View style={gStyle.spacer2} />
 
         <TouchButton
           btnStyle={[gStyle.btnPrimary, styles.btnExt]}

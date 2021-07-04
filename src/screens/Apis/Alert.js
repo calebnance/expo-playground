@@ -6,8 +6,8 @@ import { gStyle } from '../../constants';
 import TouchButton from '../../components/TouchButton';
 
 class AlertScreen extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       alert1: null,
@@ -68,8 +68,8 @@ class AlertScreen extends React.Component {
     const { alert1, alert2 } = this.state;
 
     return (
-      <View style={gStyle.container}>
-        <View style={gStyle.spacer24} />
+      <View style={gStyle.containerBg}>
+        <View style={gStyle.spacer2} />
 
         <View style={gStyle.centerItems}>
           <TouchButton
@@ -106,7 +106,7 @@ class AlertScreen extends React.Component {
 const styles = StyleSheet.create({
   placeholder: {
     alignItems: 'center',
-    height: 40,
+    height: 32,
     marginBottom: 8,
     width: '100%'
   }

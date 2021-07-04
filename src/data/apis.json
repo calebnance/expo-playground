@@ -1,68 +1,68 @@
 {
   "data": {
     "alert": {
-      "id": 1,
+      "id": "1",
       "route": "ApisAlert",
       "title": "Alert",
       "url": "https://facebook.github.io/react-native/docs/alert"
     },
     "brightness": {
-      "id": 2,
+      "id": "2",
       "route": "ApisBrightness",
       "title": "Brightness",
       "url": "https://docs.expo.io/versions/latest/sdk/brightness/"
     },
     "haptic": {
-      "id": 3,
+      "id": "3",
       "iosVerMin": 10,
       "route": "ApisHaptic",
       "title": "Haptic",
       "url": "https://docs.expo.io/versions/latest/sdk/haptic/"
     },
     "imagemanipulator": {
-      "id": 4,
+      "id": "4",
       "route": "ApisImageManipulator",
       "title": "Image Manipulator",
       "url": "https://docs.expo.io/versions/latest/sdk/imagemanipulator/"
     },
     "keyboard": {
-      "id": 5,
+      "id": "5",
       "route": "ApisKeyboard",
       "title": "Keyboard",
       "url": "https://facebook.github.io/react-native/docs/alert"
     },
     "linking": {
-      "id": 6,
+      "id": "6",
       "route": "ApisLinking",
       "title": "Linking",
       "url": "https://docs.expo.io/versions/latest/workflow/linking"
     },
     "mapview": {
-      "id": 7,
+      "id": "7",
       "route": "ApisMapView",
       "title": "Map View",
       "url": "https://docs.expo.io/versions/latest/sdk/map-view/"
     },
     "segmentedcontrol": {
-      "id": 8,
+      "id": "8",
       "route": "ApisSegmentedControl",
       "title": "Segmented Control",
       "url": "https://github.com/react-native-segmented-control/segmented-control#react-native-segmented-controlsegmented-control"
     },
     "speech": {
-      "id": 9,
+      "id": "9",
       "route": "ApisSpeech",
       "title": "Speech",
       "url": "https://docs.expo.io/versions/latest/sdk/speech/"
     },
     "vibration": {
-      "id": 10,
+      "id": "10",
       "route": "ApisVibration",
       "title": "Vibration",
       "url": "https://facebook.github.io/react-native/docs/vibration"
     },
     "video": {
-      "id": 11,
+      "id": "11",
       "route": "ApisVideo",
       "title": "Video",
       "url": "https://docs.expo.io/versions/latest/sdk/video/"

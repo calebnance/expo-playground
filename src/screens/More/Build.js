@@ -7,7 +7,7 @@ import { gStyle } from '../../constants';
 import LineItem from '../../components/LineItem';
 
 const Build = () => (
-  <ScrollView style={gStyle.container}>
+  <ScrollView style={gStyle.containerBg}>
     <LineItem label="Expo Version" text={Constants.expoVersion} />
     <LineItem label="Expo SDK" text={Constants.manifest.sdkVersion} />
     <LineItem

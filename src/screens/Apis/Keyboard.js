@@ -26,10 +26,10 @@ class KeyboardScreen extends React.Component {
 
     return (
       <TouchableWithoutFeedback accessible={false} onPress={Keyboard.dismiss}>
-        <ScrollView style={gStyle.container}>
-          <View style={gStyle.spacer24} />
+        <ScrollView style={gStyle.containerBg}>
+          <View style={gStyle.spacer2} />
 
-          <View style={gStyle.pH16}>
+          <View style={gStyle.pH2}>
             <Text style={gStyle.paragraph}>
               Below are examples of what can be achieved with the Keyboard.
             </Text>
@@ -102,7 +102,7 @@ class KeyboardScreen extends React.Component {
               value={text}
             />
 
-            <View style={gStyle.spacer240} />
+            <View style={gStyle.spacer16} />
           </View>
         </ScrollView>
       </TouchableWithoutFeedback>

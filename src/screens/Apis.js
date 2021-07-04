@@ -14,10 +14,10 @@ const Apis = ({ navigation }) => {
   const dataArray = Object.values(data);
 
   return (
-    <View style={gStyle.container}>
+    <View style={gStyle.containerBg}>
       <FlatList
         data={dataArray}
-        keyExtractor={(item) => item.id.toString()}
+        keyExtractor={(item) => item.id}
         renderItem={({ item }) => {
           let textMuted = null;
 

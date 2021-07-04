@@ -7,10 +7,10 @@ import { gStyle } from '../../constants';
 import TouchButton from '../../components/TouchButton';
 
 const SpeechScreen = () => (
-  <View style={gStyle.container}>
-    <View style={gStyle.spacer24} />
+  <View style={gStyle.containerBg}>
+    <View style={gStyle.spacer3} />
 
-    <View style={gStyle.pH16}>
+    <View style={gStyle.pH2}>
       <TouchButton
         btnStyle={gStyle.btnPrimary}
         btnTextStyle={gStyle.btnPrimaryText}

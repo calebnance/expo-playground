@@ -61,9 +61,9 @@ class BrightnessScreen extends React.Component {
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        style={gStyle.container}
+        style={gStyle.containerBg}
       >
-        <View style={gStyle.spacer24} />
+        <View style={gStyle.spacer2} />
 
         <View style={gStyle.centerItems}>
           {original && (
@@ -113,7 +113,7 @@ class BrightnessScreen extends React.Component {
             text="Set Brightness: 100%"
           />
 
-          <View style={gStyle.spacer24} />
+          <View style={gStyle.spacer2} />
 
           <Text style={gStyle.paragraphBold}>Brightness Slider</Text>
           <Slider

@@ -53,8 +53,8 @@ class MapViewScreen extends React.Component {
     const { lat, lon, location, mapProvider } = this.state;
 
     return (
-      <View style={gStyle.container}>
-        <View style={gStyle.spacer24} />
+      <View style={gStyle.containerBg}>
+        <View style={gStyle.spacer3} />
 
         <MapView
           style={styles.map}
@@ -67,12 +67,12 @@ class MapViewScreen extends React.Component {
           }}
         />
 
-        <View style={gStyle.pH16}>
+        <View style={gStyle.pH2}>
           <FlatList
             bounces={false}
             data={locationsArray}
             extraData={this.state}
-            keyExtractor={(item) => item.id.toString()}
+            keyExtractor={(item) => item.id}
             renderItem={({ item }) => {
               const activeLocation = item.name === location;
               const color = activeLocation
@@ -91,7 +91,7 @@ class MapViewScreen extends React.Component {
             }}
           />
         </View>
-        <View style={gStyle.spacer24} />
+        <View style={gStyle.spacer3} />
       </View>
     );
   }

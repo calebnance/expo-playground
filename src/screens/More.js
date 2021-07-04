@@ -7,7 +7,7 @@ import { gStyle } from '../constants';
 import TouchTextIcon from '../components/TouchTextIcon';
 
 const More = ({ navigation }) => (
-  <View style={gStyle.container}>
+  <View style={gStyle.containerBg}>
     <TouchTextIcon
       onPress={() => {
         navigation.navigate('MoreBuild', {

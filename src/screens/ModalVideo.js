@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 import { gStyle } from '../constants';
 
 const ModalVideo = () => (
-  <View style={gStyle.container}>
+  <View style={gStyle.containerBg}>
     <Text style={gStyle.heading}>Modal :: Video</Text>
   </View>
 );

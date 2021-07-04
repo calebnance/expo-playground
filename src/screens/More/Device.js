@@ -11,7 +11,7 @@ const DeviceScreen = () => {
   const formattedMemory = func.formatBytes(Device.totalMemory);
 
   return (
-    <ScrollView style={gStyle.container}>
+    <ScrollView style={gStyle.containerBg}>
       <LineItem
         label="Running On"
         text={Constants.isDevice ? 'Physcial Device' : 'Simulator/Emulator'}

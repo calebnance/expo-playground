@@ -9,8 +9,8 @@ const SegmentedControlScreen = () => {
   const [index3, setIndex3] = React.useState(0);
 
   return (
-    <View style={[gStyle.container, gStyle.pH16]}>
-      <View style={gStyle.spacer24} />
+    <View style={[gStyle.containerBg, gStyle.pH2]}>
+      <View style={gStyle.spacer3} />
 
       <SegmentedControl
         values={['One', 'Two']}
@@ -20,7 +20,7 @@ const SegmentedControlScreen = () => {
         }}
       />
 
-      <View style={gStyle.spacer24} />
+      <View style={gStyle.spacer3} />
 
       <SegmentedControl
         values={['One', 'Two']}
@@ -32,7 +32,7 @@ const SegmentedControlScreen = () => {
         activeFontStyle={{ color: colors.white }}
       />
 
-      <View style={gStyle.spacer24} />
+      <View style={gStyle.spacer3} />
 
       <SegmentedControl
         values={['One', 'Two']}
