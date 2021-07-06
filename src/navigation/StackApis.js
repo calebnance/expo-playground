@@ -16,6 +16,7 @@ import ImageManipulatorScreen from '../screens/Apis/ImageManipulator';
 import KeyboardScreen from '../screens/Apis/Keyboard';
 import LinkingScreen from '../screens/Apis/Linking';
 import MapViewScreen from '../screens/Apis/MapView';
+import PickerScreen from '../screens/Apis/Picker';
 import SegmentedControlScreen from '../screens/Apis/SegmentedControl';
 import SpeechScreen from '../screens/Apis/Speech';
 import VibrationScreen from '../screens/Apis/Vibration';
@@ -62,6 +63,10 @@ export default createStackNavigator(
     },
     ApisMapView: {
       screen: MapViewScreen,
+      navigationOptions
+    },
+    ApisPicker: {
+      screen: PickerScreen,
       navigationOptions
     },
     ApisSegmentedControl: {
