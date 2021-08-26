@@ -10,105 +10,97 @@ import {
 } from 'react-native';
 import { colors, fonts, gStyle } from '../../constants';
 
-class KeyboardScreen extends React.Component {
-  constructor() {
-    super();
+const KeyboardScreen = () => {
+  const [lightText, setLightText] = React.useState('');
+  const [darkText, setDarkText] = React.useState('');
+  const [numberText, setNumberText] = React.useState('');
+  const [phoneText, setPhoneText] = React.useState('');
+  const [emailText, setEmailText] = React.useState('');
 
-    this.state = {
-      dKey: '',
-      lKey: '',
-      text: ''
-    };
-  }
+  return (
+    <TouchableWithoutFeedback accessible={false} onPress={Keyboard.dismiss}>
+      <ScrollView style={gStyle.containerBg}>
+        <View style={gStyle.spacer2} />
 
-  render() {
-    const { dKey, lKey, text } = this.state;
+        <View style={gStyle.pH2}>
+          <Text style={gStyle.paragraph}>
+            Below are examples of what can be achieved with the Keyboard.
+          </Text>
 
-    return (
-      <TouchableWithoutFeedback accessible={false} onPress={Keyboard.dismiss}>
-        <ScrollView style={gStyle.containerBg}>
-          <View style={gStyle.spacer2} />
-
-          <View style={gStyle.pH2}>
-            <Text style={gStyle.paragraph}>
-              Below are examples of what can be achieved with the Keyboard.
-            </Text>
-
-            <View style={gStyle.sectionHeading}>
-              <Text style={gStyle.sectionHeadingText}>Keyboard Look</Text>
-            </View>
-
-            <Text style={gStyle.paragraph}>
-              Also notice the placeholder and text selection color can be set as
-              well.
-            </Text>
-
-            <Text style={styles.label}>Light Keyboard</Text>
-            <TextInput
-              keyboardAppearance="light"
-              onChangeText={(input) => this.setState({ lKey: input })}
-              placeholder="tap here"
-              placeholderTextColor={colors.grey}
-              selectionColor={colors.brandPrimary}
-              style={styles.input}
-              value={lKey}
-            />
-
-            <Text style={styles.label}>Dark Keyboard</Text>
-            <TextInput
-              keyboardAppearance="dark"
-              onChangeText={(input) => this.setState({ dKey: input })}
-              placeholder="tap here"
-              placeholderTextColor={colors.grey}
-              selectionColor={colors.brandPrimary}
-              style={styles.input}
-              value={dKey}
-            />
-
-            <View style={gStyle.sectionHeading}>
-              <Text style={gStyle.sectionHeadingText}>Keyboard Type</Text>
-            </View>
-
-            <Text style={styles.label}>Number Pad</Text>
-            <TextInput
-              onChangeText={(input) => this.setState({ text: input })}
-              keyboardType="number-pad"
-              placeholder="tap here"
-              placeholderTextColor={colors.grey}
-              selectionColor={colors.brandPrimary}
-              style={styles.input}
-              value={text}
-            />
-
-            <Text style={styles.label}>Phone Pad</Text>
-            <TextInput
-              onChangeText={(input) => this.setState({ text: input })}
-              keyboardType="phone-pad"
-              placeholder="tap here"
-              placeholderTextColor={colors.grey}
-              selectionColor={colors.brandPrimary}
-              style={styles.input}
-              value={text}
-            />
-
-            <Text style={styles.label}>E-mail Address</Text>
-            <TextInput
-              onChangeText={(input) => this.setState({ text: input })}
-              keyboardType="email-address"
-              placeholder="tap here"
-              placeholderTextColor={colors.grey}
-              selectionColor={colors.brandPrimary}
-              style={styles.input}
-              value={text}
-            />
-
-            <View style={gStyle.spacer16} />
+          <View style={gStyle.sectionHeading}>
+            <Text style={gStyle.sectionHeadingText}>Keyboard Look</Text>
           </View>
-        </ScrollView>
-      </TouchableWithoutFeedback>
-    );
-  }
-}
+
+          <Text style={gStyle.paragraph}>
+            Also notice the placeholder and text selection color can be set as
+            well.
+          </Text>
+
+          <Text style={styles.label}>Light Keyboard</Text>
+          <TextInput
+            keyboardAppearance="light"
+            onChangeText={setLightText}
+            placeholder="tap here"
+            placeholderTextColor={colors.grey}
+            selectionColor={colors.brandPrimary}
+            style={styles.input}
+            value={lightText}
+          />
+
+          <Text style={styles.label}>Dark Keyboard</Text>
+          <TextInput
+            keyboardAppearance="dark"
+            onChangeText={setDarkText}
+            placeholder="tap here"
+            placeholderTextColor={colors.grey}
+            selectionColor={colors.brandPrimary}
+            style={styles.input}
+            value={darkText}
+          />
+
+          <View style={gStyle.sectionHeading}>
+            <Text style={gStyle.sectionHeadingText}>Keyboard Type</Text>
+          </View>
+
+          <Text style={styles.label}>Number Pad</Text>
+          <TextInput
+            onChangeText={setNumberText}
+            keyboardType="number-pad"
+            placeholder="tap here"
+            placeholderTextColor={colors.grey}
+            selectionColor={colors.brandPrimary}
+            style={styles.input}
+            value={numberText}
+          />
+
+          <Text style={styles.label}>Phone Pad</Text>
+          <TextInput
+            onChangeText={setPhoneText}
+            keyboardType="phone-pad"
+            placeholder="tap here"
+            placeholderTextColor={colors.grey}
+            selectionColor={colors.brandPrimary}
+            style={styles.input}
+            value={phoneText}
+          />
+
+          <Text style={styles.label}>E-mail Address</Text>
+          <TextInput
+            onChangeText={setEmailText}
+            keyboardType="email-address"
+            placeholder="tap here"
+            placeholderTextColor={colors.grey}
+            selectionColor={colors.brandPrimary}
+            style={styles.input}
+            value={emailText}
+          />
+
+          <View style={gStyle.spacer16} />
+        </View>
+      </ScrollView>
+    </TouchableWithoutFeedback>
+  );
+};
 
 const styles = StyleSheet.create({
   label: {

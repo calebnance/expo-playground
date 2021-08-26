@@ -5,31 +5,22 @@ import { gStyle } from '../../constants';
 // components
 import TouchButton from '../../components/TouchButton';
 
-class AlertScreen extends React.Component {
-  constructor() {
-    super();
+const AlertScreen = () => {
+  const [alert1, setAlert1] = React.useState(null);
+  const [alert2, setAlert2] = React.useState(null);
 
-    this.state = {
-      alert1: null,
-      alert2: null
-    };
-
-    this.alertTwoOptions = this.alertTwoOptions.bind(this);
-    this.alertThreeOptions = this.alertThreeOptions.bind(this);
-  }
-
-  alertTwoOptions() {
+  const alertTwoOptions = () => {
     Alert.alert(
       'Alert with 2 Options',
       'Alert description area',
       [
         {
-          onPress: () => this.setState({ alert1: 'Cancel' }),
+          onPress: () => setAlert1('Cancel'),
           style: 'cancel',
           text: 'Cancel'
         },
         {
-          onPress: () => this.setState({ alert1: 'OK' }),
+          onPress: () => setAlert1('OK'),
           text: 'OK'
         }
       ],
@@ -37,24 +28,24 @@ class AlertScreen extends React.Component {
         cancelable: false
       }
     );
-  }
+  };
 
-  alertThreeOptions() {
+  const alertThreeOptions = () => {
     Alert.alert(
       'Alert with 3 Options',
       'Alert description area',
       [
         {
-          onPress: () => this.setState({ alert2: 'Ask me later' }),
+          onPress: () => setAlert2('Ask me later'),
           text: 'Ask me later'
         },
         {
-          onPress: () => this.setState({ alert2: 'Cancel' }),
+          onPress: () => setAlert2('Cancel'),
           style: 'cancel',
           text: 'Cancel'
         },
         {
-          onPress: () => this.setState({ alert2: 'OK' }),
+          onPress: () => setAlert2('OK'),
           text: 'OK'
         }
       ],
@@ -62,46 +53,42 @@ class AlertScreen extends React.Component {
         cancelable: false
       }
     );
-  }
+  };
 
-  render() {
-    const { alert1, alert2 } = this.state;
+  return (
+    <View style={gStyle.containerBg}>
+      <View style={gStyle.spacer2} />
 
-    return (
-      <View style={gStyle.containerBg}>
-        <View style={gStyle.spacer2} />
+      <View style={gStyle.centerItems}>
+        <TouchButton
+          btnStyle={gStyle.btnPrimary}
+          btnTextStyle={gStyle.btnPrimaryText}
+          onPress={alertTwoOptions}
+          text="Alert with 2 Options"
+        />
 
-        <View style={gStyle.centerItems}>
-          <TouchButton
-            btnStyle={gStyle.btnPrimary}
-            btnTextStyle={gStyle.btnPrimaryText}
-            onPress={() => this.alertTwoOptions()}
-            text="Alert with 2 Options"
-          />
+        <View style={styles.placeholder}>
+          {alert1 && (
+            <Text style={gStyle.paragraph}>{`Selected: ${alert1}`}</Text>
+          )}
+        </View>
 
-          <View style={styles.placeholder}>
-            {alert1 && (
-              <Text style={gStyle.paragraph}>{`Selected: ${alert1}`}</Text>
-            )}
-          </View>
+        <TouchButton
+          btnStyle={gStyle.btnPrimary}
+          btnTextStyle={gStyle.btnPrimaryText}
+          onPress={alertThreeOptions}
+          text="Alert with 3 Options"
+        />
 
-          <TouchButton
-            btnStyle={gStyle.btnPrimary}
-            btnTextStyle={gStyle.btnPrimaryText}
-            onPress={() => this.alertThreeOptions()}
-            text="Alert with 3 Options"
-          />
-
-          <View style={styles.placeholder}>
-            {alert2 && (
-              <Text style={gStyle.paragraph}>{`Selected: ${alert2}`}</Text>
-            )}
-          </View>
+        <View style={styles.placeholder}>
+          {alert2 && (
+            <Text style={gStyle.paragraph}>{`Selected: ${alert2}`}</Text>
+          )}
         </View>
       </View>
-    );
-  }
-}
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   placeholder: {
