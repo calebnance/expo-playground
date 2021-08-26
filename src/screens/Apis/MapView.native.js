@@ -2,6 +2,7 @@ import React from 'react';
 import {
   FlatList,
   StyleSheet,
+  Switch,
   Text,
   TouchableOpacity,
   View
@@ -13,7 +14,7 @@ import locations from '../../data/locations.json';
 // icons
 import SvgMapPin from '../../components/icons/Svg.MapPin';
 
-// const { PROVIDER_GOOGLE } = MapView;
+const { PROVIDER_GOOGLE } = MapView;
 const locationsArray = Object.values(locations);
 
 class MapViewScreen extends React.Component {
@@ -24,20 +25,13 @@ class MapViewScreen extends React.Component {
       lat: parseFloat(locationsArray[0].lat),
       lon: parseFloat(locationsArray[0].lon),
       location: 'New York',
-      // mapProvider: PROVIDER_GOOGLE,
-      mapProvider: null
+      mapProvider: PROVIDER_GOOGLE,
+      useApple: false
     };
 
-    // this.toggleMapService = this.toggleMapService.bind(this);
+    this.toggleMapService = this.toggleMapService.bind(this);
     this.handleLocationChange = this.handleLocationChange.bind(this);
   }
-
-  // toggleMapService(value) {
-  //   this.setState({
-  //     mapProvider: value ? null : PROVIDER_GOOGLE,
-  //     useApple: value
-  //   });
-  // }
 
   handleLocationChange(name) {
     const { lat, lon } = locations[name];
@@ -49,12 +43,29 @@ class MapViewScreen extends React.Component {
     });
   }
 
+  toggleMapService(value) {
+    this.setState({
+      mapProvider: value ? null : PROVIDER_GOOGLE,
+      useApple: value
+    });
+  }
+
   render() {
-    const { lat, lon, location, mapProvider } = this.state;
+    const { lat, lon, location, mapProvider, useApple } = this.state;
 
     return (
       <View style={gStyle.containerBg}>
-        <View style={gStyle.spacer3} />
+        <View style={gStyle.spacer2} />
+
+        {device.iOS && (
+          <View style={styles.lineItem}>
+            <Text>Use Apple Maps?</Text>
+            <Switch
+              onValueChange={(val) => this.toggleMapService(val)}
+              value={useApple}
+            />
+          </View>
+        )}
 
         <MapView
           style={styles.map}
@@ -97,28 +108,6 @@ class MapViewScreen extends React.Component {
   }
 }
 
-/*
-{device.iOS && (
-  <View style={styles.lineItem}>
-    <Text>Use Apple Maps?</Text>
-    <Switch
-      onValueChange={val => this.toggleMapService(val)}
-      value={useApple}
-    />
-  </View>
-)}
-
-lineItem: {
-  alignItems: 'center',
-  flexDirection: 'row',
-  height: 48,
-  justifyContent: 'space-between',
-  marginBottom: 16,
-  paddingHorizontal: 16,
-  width: '100%'
-},
-*/
-
 const styles = StyleSheet.create({
   map: {
     alignSelf: 'center',
@@ -133,6 +122,15 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginVertical: 4,
     paddingVertical: 8
+  },
+  lineItem: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    height: 48,
+    justifyContent: 'space-between',
+    marginBottom: 16,
+    paddingHorizontal: 16,
+    width: '100%'
   },
   location: {
     fontFamily: fonts.medium,

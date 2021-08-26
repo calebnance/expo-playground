@@ -30,64 +30,38 @@ const androidNotes = (
   </React.Fragment>
 );
 
-class VibrationScreen extends React.Component {
-  constructor(props) {
-    super(props);
+const VibrationScreen = () => {
+  const os = device.iOS ? 'Apple' : 'Android';
+  const renderNotes = device.iOS ? appleNotes : androidNotes;
 
-    this.state = {
-      once: 1000,
-      twice: [1000, 1000]
-    };
+  return (
+    <View style={gStyle.containerBg}>
+      <View style={gStyle.spacer3} />
 
-    this.vibrateOnce = this.vibrateOnce.bind(this);
-    this.vibrateTwice = this.vibrateTwice.bind(this);
-  }
+      <View style={gStyle.centerItems}>
+        <TouchButton
+          btnStyle={gStyle.btnPrimary}
+          btnTextStyle={gStyle.btnPrimaryText}
+          onPress={() => Vibration.vibrate(1000)}
+          text="Vibrate x 1"
+        />
+        <TouchButton
+          btnStyle={gStyle.btnPrimary}
+          btnTextStyle={gStyle.btnPrimaryText}
+          onPress={() => Vibration.vibrate([1000, 1000])}
+          text="Vibrate x 2"
+        />
 
-  vibrateOnce() {
-    const { once } = this.state;
-
-    Vibration.vibrate(once);
-  }
-
-  vibrateTwice() {
-    const { twice } = this.state;
-
-    Vibration.vibrate(twice);
-  }
-
-  render() {
-    const os = device.iOS ? 'Apple' : 'Android';
-    const renderNotes = device.iOS ? appleNotes : androidNotes;
-
-    return (
-      <View style={gStyle.containerBg}>
         <View style={gStyle.spacer3} />
 
-        <View style={gStyle.centerItems}>
-          <TouchButton
-            btnStyle={gStyle.btnPrimary}
-            btnTextStyle={gStyle.btnPrimaryText}
-            onPress={() => this.vibrateOnce()}
-            text="Vibrate x 1"
-          />
-          <TouchButton
-            btnStyle={gStyle.btnPrimary}
-            btnTextStyle={gStyle.btnPrimaryText}
-            onPress={() => this.vibrateTwice()}
-            text="Vibrate x 2"
-          />
+        <Text style={gStyle.paragraph}>
+          {`Since you are on an ${os} device...`}
+        </Text>
 
-          <View style={gStyle.spacer3} />
-
-          <Text style={gStyle.paragraph}>
-            {`Since you are on an ${os} device...`}
-          </Text>
-
-          {renderNotes}
-        </View>
+        {renderNotes}
       </View>
-    );
-  }
-}
+    </View>
+  );
+};
 
 export default VibrationScreen;

@@ -5,37 +5,28 @@ import { device, func } from './src/constants';
 
 import Stack from './src/navigation/Stack';
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
+export default () => {
+  const [isLoading, setLoading] = React.useState(true);
 
-    this.state = {
-      isLoading: true
-    };
-  }
+  const barStyle = device.iOS ? 'dark-content' : 'light-content';
 
-  render() {
-    const { isLoading } = this.state;
-
-    const barStyle = device.iOS ? 'dark-content' : 'light-content';
-
-    if (isLoading) {
-      return (
-        <AppLoading
-          onError={() => {
-            // console.warn
-          }}
-          onFinish={() => this.setState({ isLoading: false })}
-          startAsync={func.loadAssetsAsync}
-        />
-      );
-    }
-
+  if (isLoading) {
     return (
-      <React.Fragment>
-        <StatusBar barStyle={barStyle} />
-        <Stack />
-      </React.Fragment>
+      <AppLoading
+        onError={() => {
+          // console.warn
+        }}
+        onFinish={() => setLoading(false)}
+        startAsync={func.loadAssetsAsync}
+      />
     );
   }
-}
+
+  return (
+    <React.Fragment>
+      <StatusBar barStyle={barStyle} />
+
+      <Stack />
+    </React.Fragment>
+  );
+};
