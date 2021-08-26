@@ -49,7 +49,7 @@ Run Project Locally: `expo start` or `yarn dev`
 - [Vibration](https://facebook.github.io/react-native/docs/vibration)
 - [Video](https://docs.expo.dev/versions/latest/sdk/video/)
 
-#### Other info
+### Other info
 
 - **Build information**
   - Expo version
