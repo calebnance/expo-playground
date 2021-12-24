@@ -1,36 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { createStackNavigator } from 'react-navigation-stack';
-
-import navigationOptions from './defaultNavOptions';
-
-// icons
-import SvgComponents from '../components/icons/Svg.Components';
+import { createStackNavigator } from '@react-navigation/stack';
 
 // screens
 import ComponentsScreen from '../screens/Components';
 
-const Icon = ({ focused }) => <SvgComponents active={focused} />;
+const Stack = createStackNavigator();
 
-Icon.propTypes = {
-  // required
-  focused: PropTypes.bool.isRequired
-};
-
-export default createStackNavigator(
-  {
-    ComponentsMain: {
-      screen: ComponentsScreen,
-      navigationOptions: {
-        title: 'Components',
-        ...navigationOptions
-      }
-    }
-  },
-  {
-    navigationOptions: {
-      tabBarLabel: 'Components',
-      tabBarIcon: Icon
-    }
-  }
+export default () => (
+  <Stack.Navigator>
+    <Stack.Screen
+      name="ComponentsMain"
+      component={ComponentsScreen}
+      options={{
+        title: 'Components'
+      }}
+    />
+  </Stack.Navigator>
 );

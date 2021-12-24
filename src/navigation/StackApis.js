@@ -1,11 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { createStackNavigator } from 'react-navigation-stack';
-
-import navigationOptions from './defaultNavOptions';
-
-// icons
-import SvgApis from '../components/icons/Svg.Apis';
+import { createStackNavigator } from '@react-navigation/stack';
+import * as WebBrowser from 'expo-web-browser';
+import { gStyle } from '../constants';
 
 // screens
 import ApisScreen from '../screens/Apis';
@@ -22,85 +18,371 @@ import SpeechScreen from '../screens/Apis/Speech';
 import VibrationScreen from '../screens/Apis/Vibration';
 import VideoScreen from '../screens/Apis/Video';
 
-const Icon = ({ focused }) => <SvgApis active={focused} />;
+// components
+import TouchIcon from '../components/TouchIcon';
 
-Icon.propTypes = {
-  // required
-  focused: PropTypes.bool.isRequired
-};
+// icons
+import SvgArrowLeft from '../components/icons/Svg.ArrowLeft';
+import SvgOpenBook from '../components/icons/Svg.OpenBook';
 
-export default createStackNavigator(
-  {
-    ApisMain: {
-      screen: ApisScreen,
-      navigationOptions: {
+const Stack = createStackNavigator();
+
+export default () => (
+  <Stack.Navigator>
+    <Stack.Screen
+      name="ApisMain"
+      component={ApisScreen}
+      options={{
         title: 'APIs'
-      }
-    },
-    ApisAlert: {
-      screen: AlertScreen,
-      navigationOptions
-    },
-    ApisBrightness: {
-      screen: BrightnessScreen,
-      navigationOptions
-    },
-    ApisHaptic: {
-      screen: HapticScreen,
-      navigationOptions
-    },
-    ApisImageManipulator: {
-      screen: ImageManipulatorScreen,
-      navigationOptions
-    },
-    ApisKeyboard: {
-      screen: KeyboardScreen,
-      navigationOptions
-    },
-    ApisLinking: {
-      screen: LinkingScreen,
-      navigationOptions
-    },
-    ApisMapView: {
-      screen: MapViewScreen,
-      navigationOptions
-    },
-    ApisPicker: {
-      screen: PickerScreen,
-      navigationOptions
-    },
-    ApisSegmentedControl: {
-      screen: SegmentedControlScreen,
-      navigationOptions
-    },
-    ApisSpeech: {
-      screen: SpeechScreen,
-      navigationOptions
-    },
-    ApisVibration: {
-      screen: VibrationScreen,
-      navigationOptions
-    },
-    ApisVideo: {
-      screen: VideoScreen,
-      navigationOptions
-    }
-  },
-  {
-    initialRouteName: 'ApisMain',
-    navigationOptions: {
-      tabBarLabel: 'APIs',
-      tabBarIcon: Icon
-    }
-  }
-);
+      }}
+    />
+    <Stack.Screen
+      name="ApisAlert"
+      component={AlertScreen}
+      options={({ navigation, route }) => {
+        const { title, url } = route.params;
 
-// example of navigation state manipulation
-// StackDownloads.navigationOptions = ({ navigation }) => {
-//   const { index } = navigation.state;
-//
-//   return {
-//     tabBarLabel: 'Downloads',
-//     tabBarIcon: Icon
-//   };
-// };
+        return {
+          headerLeft: () => (
+            <TouchIcon
+              icon={<SvgArrowLeft />}
+              onPress={() => {
+                navigation.goBack();
+              }}
+              style={gStyle.navHeaderLeftIconStyle}
+            />
+          ),
+          headerRight: () => (
+            <TouchIcon
+              icon={<SvgOpenBook />}
+              onPress={() => {
+                WebBrowser.openBrowserAsync(url);
+              }}
+              style={gStyle.navHeaderRightIconStyle}
+            />
+          ),
+          title
+        };
+      }}
+    />
+    <Stack.Screen
+      name="ApisBrightness"
+      component={BrightnessScreen}
+      options={({ navigation, route }) => {
+        const { title, url } = route.params;
+
+        return {
+          headerLeft: () => (
+            <TouchIcon
+              icon={<SvgArrowLeft />}
+              onPress={() => {
+                navigation.goBack();
+              }}
+              style={gStyle.navHeaderLeftIconStyle}
+            />
+          ),
+          headerRight: () => (
+            <TouchIcon
+              icon={<SvgOpenBook />}
+              onPress={() => {
+                WebBrowser.openBrowserAsync(url);
+              }}
+              style={gStyle.navHeaderRightIconStyle}
+            />
+          ),
+          title
+        };
+      }}
+    />
+    <Stack.Screen
+      name="ApisHaptic"
+      component={HapticScreen}
+      options={({ navigation, route }) => {
+        const { title, url } = route.params;
+
+        return {
+          headerLeft: () => (
+            <TouchIcon
+              icon={<SvgArrowLeft />}
+              onPress={() => {
+                navigation.goBack();
+              }}
+              style={gStyle.navHeaderLeftIconStyle}
+            />
+          ),
+          headerRight: () => (
+            <TouchIcon
+              icon={<SvgOpenBook />}
+              onPress={() => {
+                WebBrowser.openBrowserAsync(url);
+              }}
+              style={gStyle.navHeaderRightIconStyle}
+            />
+          ),
+          title
+        };
+      }}
+    />
+    <Stack.Screen
+      name="ApisImageManipulator"
+      component={ImageManipulatorScreen}
+      options={({ navigation, route }) => {
+        const { title, url } = route.params;
+
+        return {
+          headerLeft: () => (
+            <TouchIcon
+              icon={<SvgArrowLeft />}
+              onPress={() => {
+                navigation.goBack();
+              }}
+              style={gStyle.navHeaderLeftIconStyle}
+            />
+          ),
+          headerRight: () => (
+            <TouchIcon
+              icon={<SvgOpenBook />}
+              onPress={() => {
+                WebBrowser.openBrowserAsync(url);
+              }}
+              style={gStyle.navHeaderRightIconStyle}
+            />
+          ),
+          title
+        };
+      }}
+    />
+    <Stack.Screen
+      name="ApisKeyboard"
+      component={KeyboardScreen}
+      options={({ navigation, route }) => {
+        const { title, url } = route.params;
+
+        return {
+          headerLeft: () => (
+            <TouchIcon
+              icon={<SvgArrowLeft />}
+              onPress={() => {
+                navigation.goBack();
+              }}
+              style={gStyle.navHeaderLeftIconStyle}
+            />
+          ),
+          headerRight: () => (
+            <TouchIcon
+              icon={<SvgOpenBook />}
+              onPress={() => {
+                WebBrowser.openBrowserAsync(url);
+              }}
+              style={gStyle.navHeaderRightIconStyle}
+            />
+          ),
+          title
+        };
+      }}
+    />
+    <Stack.Screen
+      name="ApisLinking"
+      component={LinkingScreen}
+      options={({ navigation, route }) => {
+        const { title, url } = route.params;
+
+        return {
+          headerLeft: () => (
+            <TouchIcon
+              icon={<SvgArrowLeft />}
+              onPress={() => {
+                navigation.goBack();
+              }}
+              style={gStyle.navHeaderLeftIconStyle}
+            />
+          ),
+          headerRight: () => (
+            <TouchIcon
+              icon={<SvgOpenBook />}
+              onPress={() => {
+                WebBrowser.openBrowserAsync(url);
+              }}
+              style={gStyle.navHeaderRightIconStyle}
+            />
+          ),
+          title
+        };
+      }}
+    />
+    <Stack.Screen
+      name="ApisMapView"
+      component={MapViewScreen}
+      options={({ navigation, route }) => {
+        const { title, url } = route.params;
+
+        return {
+          headerLeft: () => (
+            <TouchIcon
+              icon={<SvgArrowLeft />}
+              onPress={() => {
+                navigation.goBack();
+              }}
+              style={gStyle.navHeaderLeftIconStyle}
+            />
+          ),
+          headerRight: () => (
+            <TouchIcon
+              icon={<SvgOpenBook />}
+              onPress={() => {
+                WebBrowser.openBrowserAsync(url);
+              }}
+              style={gStyle.navHeaderRightIconStyle}
+            />
+          ),
+          title
+        };
+      }}
+    />
+    <Stack.Screen
+      name="ApisPicker"
+      component={PickerScreen}
+      options={({ navigation, route }) => {
+        const { title, url } = route.params;
+
+        return {
+          headerLeft: () => (
+            <TouchIcon
+              icon={<SvgArrowLeft />}
+              onPress={() => {
+                navigation.goBack();
+              }}
+              style={gStyle.navHeaderLeftIconStyle}
+            />
+          ),
+          headerRight: () => (
+            <TouchIcon
+              icon={<SvgOpenBook />}
+              onPress={() => {
+                WebBrowser.openBrowserAsync(url);
+              }}
+              style={gStyle.navHeaderRightIconStyle}
+            />
+          ),
+          title
+        };
+      }}
+    />
+    <Stack.Screen
+      name="ApisSegmentedControl"
+      component={SegmentedControlScreen}
+      options={({ navigation, route }) => {
+        const { title, url } = route.params;
+
+        return {
+          headerLeft: () => (
+            <TouchIcon
+              icon={<SvgArrowLeft />}
+              onPress={() => {
+                navigation.goBack();
+              }}
+              style={gStyle.navHeaderLeftIconStyle}
+            />
+          ),
+          headerRight: () => (
+            <TouchIcon
+              icon={<SvgOpenBook />}
+              onPress={() => {
+                WebBrowser.openBrowserAsync(url);
+              }}
+              style={gStyle.navHeaderRightIconStyle}
+            />
+          ),
+          title
+        };
+      }}
+    />
+    <Stack.Screen
+      name="ApisSpeech"
+      component={SpeechScreen}
+      options={({ navigation, route }) => {
+        const { title, url } = route.params;
+
+        return {
+          headerLeft: () => (
+            <TouchIcon
+              icon={<SvgArrowLeft />}
+              onPress={() => {
+                navigation.goBack();
+              }}
+              style={gStyle.navHeaderLeftIconStyle}
+            />
+          ),
+          headerRight: () => (
+            <TouchIcon
+              icon={<SvgOpenBook />}
+              onPress={() => {
+                WebBrowser.openBrowserAsync(url);
+              }}
+              style={gStyle.navHeaderRightIconStyle}
+            />
+          ),
+          title
+        };
+      }}
+    />
+    <Stack.Screen
+      name="ApisVibration"
+      component={VibrationScreen}
+      options={({ navigation, route }) => {
+        const { title, url } = route.params;
+
+        return {
+          headerLeft: () => (
+            <TouchIcon
+              icon={<SvgArrowLeft />}
+              onPress={() => {
+                navigation.goBack();
+              }}
+              style={gStyle.navHeaderLeftIconStyle}
+            />
+          ),
+          headerRight: () => (
+            <TouchIcon
+              icon={<SvgOpenBook />}
+              onPress={() => {
+                WebBrowser.openBrowserAsync(url);
+              }}
+              style={gStyle.navHeaderRightIconStyle}
+            />
+          ),
+          title
+        };
+      }}
+    />
+    <Stack.Screen
+      name="ApisVideo"
+      component={VideoScreen}
+      options={({ navigation, route }) => {
+        const { title, url } = route.params;
+
+        return {
+          headerLeft: () => (
+            <TouchIcon
+              icon={<SvgArrowLeft />}
+              onPress={() => {
+                navigation.goBack();
+              }}
+              style={gStyle.navHeaderLeftIconStyle}
+            />
+          ),
+          headerRight: () => (
+            <TouchIcon
+              icon={<SvgOpenBook />}
+              onPress={() => {
+                WebBrowser.openBrowserAsync(url);
+              }}
+              style={gStyle.navHeaderRightIconStyle}
+            />
+          ),
+          title
+        };
+      }}
+    />
+  </Stack.Navigator>
+);

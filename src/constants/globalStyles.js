@@ -140,6 +140,12 @@ export default {
 
   // navigation
   // ///////////////////////////////////////////////////////////////////////////
+  navHeaderLeftIconStyle: {
+    borderWidth: 0,
+    paddingLeft: 16,
+    paddingRight: 0,
+    paddingVertical: 8
+  },
   navHeaderRightIconStyle: {
     borderWidth: 0,
     paddingLeft: 0,
