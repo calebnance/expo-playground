@@ -19,7 +19,7 @@ const DeviceScreen = () => {
       <LineItem label="Device" text={device.iOS ? 'Apple' : 'Android'} />
       <LineItem label="Device Model" text={Device.modelName} />
       <LineItem label="Device OS Version" text={Device.osVersion} />
-      <LineItem label="Device Year" text={Constants.deviceYearClass} />
+      <LineItem label="Device Year" text={Device.deviceYearClass} />
       <LineItem label="Device Name" text={Constants.deviceName} />
       <LineItem
         label="Device Dimensions"
