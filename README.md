@@ -4,7 +4,7 @@
 
 ## Features
 
-- Expo SDK 42
+- Expo SDK 43
 - iOS, Android and PWA (Web App)
 - React Navigation v5
 - PropTypes
@@ -65,6 +65,7 @@ Run Project Locally: `expo start` or `yarn dev`
 
 ## Release Notes
 
+- upgraded to [Expo SDK 43](https://blog.expo.dev/expo-sdk-43-aa9b3c7d5541)
 - upgraded to [React Navigation v5](https://reactnavigation.org/docs/5.x/getting-started)
 - upgraded to [Expo SDK 42](https://blog.expo.dev/expo-sdk-42-579aee2348b6)
 - upgraded to [Expo SDK 41](https://blog.expo.dev/expo-sdk-41-12cc5232f2ef)
