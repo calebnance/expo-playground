@@ -3,7 +3,8 @@ import { StatusBar } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import { device, func } from './src/constants';
 
-import Stack from './src/navigation/Stack';
+// root navigation stack
+import RootStack from './src/navigation/RootStack';
 
 export default () => {
   const [isLoading, setLoading] = React.useState(true);
@@ -26,7 +27,7 @@ export default () => {
     <React.Fragment>
       <StatusBar barStyle={barStyle} />
 
-      <Stack />
+      <RootStack />
     </React.Fragment>
   );
 };
