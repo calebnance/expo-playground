@@ -15,6 +15,9 @@ const Tab = createBottomTabNavigator();
 export default () => (
   <Tab.Navigator
     screenOptions={({ route }) => ({
+      headerShown: false,
+      tabBarActiveTintColor: colors.white,
+      tabBarInactiveTintColor: colors.brandSecondary,
       tabBarIcon: ({ color }) => {
         let icon = <SvgApis fill={color} />;
 
@@ -22,16 +25,12 @@ export default () => (
           icon = <SvgMenu fill={color} />;
         }
         return icon;
-      }
-    })}
-    tabBarOptions={{
-      activeTintColor: colors.white,
-      inactiveTintColor: colors.brandSecondary,
-      style: {
+      },
+      tabBarStyle: {
         backgroundColor: colors.brandPrimary,
         borderTopWidth: 0
       }
-    }}
+    })}
   >
     <Tab.Screen
       name="StackApis"
