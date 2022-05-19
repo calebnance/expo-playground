@@ -2,20 +2,29 @@
 
 [![follow @calebnance](https://img.shields.io/twitter/follow/calebnance.svg?style=for-the-badge&logo=TWITTER&logoColor=FFFFFF&labelColor=00aced&logoWidth=20&color=lightgray)](https://twitter.com/calebnance)
 
-## Features
+## Table of Contents
 
-- Expo SDK 44
-- iOS, Android and PWA (Web App)
-- React Navigation v6
-- PropTypes
+- [Install & Build](#install--build)
+- [Features](#features)
+- [Linting](#linting)
+- [Release Notes](#release-notes)
 
 ## Install & Build
 
-First, make sure you have Expo CLI installed: `npm install -g expo-cli`
+First, make sure you have installed on your machine:
+  - [Yarn](https://classic.yarnpkg.com/en/docs/install): `npm install --global yarn`
+  - Expo CLI: `npm install -g expo-cli`
 
 Install: `yarn` or `yarn install`
 
-Run Project Locally: `expo start` or `yarn dev`
+Run Project Locally: `yarn dev` or `expo start`
+
+## Features
+
+- Expo SDK 45
+- iOS, Android and PWA (Progressive Web App)
+- React Navigation v6
+- PropTypes
 
 ## Linting
 
@@ -30,41 +39,9 @@ Run Project Locally: `expo start` or `yarn dev`
   - automatic format on save (toggle format on save)
 - be aware of the `.prettierignore` file
 
-## API/Component Examples in this project
-
-- [Alert](https://facebook.github.io/react-native/docs/alert)
-- [Brightness](https://docs.expo.dev/versions/latest/sdk/brightness/)
-- [Haptic](https://docs.expo.dev/versions/latest/sdk/haptic/)
-- [Image Manipulator](https://docs.expo.dev/versions/latest/sdk/imagemanipulator/)
-  - rotate image left or right by 90 degrees
-  - save modified image to camera roll (asks for permission to save)
-- [Keyboard](https://facebook.github.io/react-native/docs/keyboard)
-- [Linking](https://docs.expo.dev/versions/latest/workflow/linking)
-- [MapView](https://docs.expo.dev/versions/latest/sdk/map-view/)
-  - if on iOS device, option to toggle between Google Maps and Apple Maps
-  - example of how to change location dynamically
-- [Picker](https://github.com/react-native-picker/picker#readme)
-- [Segmented Control](https://github.com/react-native-segmented-control/segmented-control#readme)
-- [Speech](https://docs.expo.dev/versions/latest/sdk/speech/)
-- [Vibration](https://facebook.github.io/react-native/docs/vibration)
-- [Video](https://docs.expo.dev/versions/latest/sdk/video/)
-
-### Other info
-
-- **Build information**
-  - Expo version
-  - Expo SDK
-  - Orientation
-  - Current App Version
-- **Device information**
-  - Device Type
-  - Running On (Physical or Emulator/Simulator)
-  - Device Name
-  - Device Year
-  - Device Dimensions
-
 ## Release Notes
 
+- upgraded to [Expo SDK 45](https://blog.expo.dev/expo-sdk-45-f4e332954a68)
 - upgraded to [React Navigation v6](https://reactnavigation.org/docs/getting-started)
 - upgraded to [Expo SDK 44](https://blog.expo.dev/expo-sdk-44-4c4b8306584a)
 - upgraded to [Expo SDK 43](https://blog.expo.dev/expo-sdk-43-aa9b3c7d5541)
