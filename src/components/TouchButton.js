@@ -1,18 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import { gStyle } from '../constants';
 
-const TouchButton = ({ btnStyle, btnTextStyle, onPress, text, minWidth }) => {
-  const container = StyleSheet.flatten([gStyle.btn, btnStyle, { minWidth }]);
-  const textStyle = StyleSheet.flatten([gStyle.btnText, btnTextStyle]);
-
-  return (
-    <TouchableOpacity activeOpacity={0.7} onPress={onPress} style={container}>
-      <Text style={textStyle}>{text}</Text>
-    </TouchableOpacity>
-  );
-};
+const TouchButton = ({ btnStyle, btnTextStyle, onPress, text, minWidth }) => (
+  <TouchableOpacity
+    activeOpacity={0.7}
+    onPress={onPress}
+    style={[gStyle.btn, btnStyle, { minWidth }]}
+  >
+    <Text style={[gStyle.btnText, btnTextStyle]}>{text}</Text>
+  </TouchableOpacity>
+);
 
 TouchButton.defaultProps = {
   btnStyle: {},
